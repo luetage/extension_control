@@ -139,16 +139,16 @@ function light() {
 	document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
 	document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
 	document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
-	document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
-	document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
+	document.body.style.setProperty('--headerHi', 'hsl(0, 0%, 28%)');
+	document.body.style.setProperty('--headerHiShadow', 'hsl(0, 0%, 40%)');
 	document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
 	document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
 	document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
 	document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
-	document.body.style.setProperty('--extEn', 'hsl(228,57%,42%)');
-	document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
-	document.body.style.setProperty('--extEnHi', 'hsl(228,57%,42%)');
-	document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
+	document.body.style.setProperty('--extEn', 'hsl(0,0%,28%)');
+	document.body.style.setProperty('--extEnShadow', 'hsl(0,0%,40%)');
+	document.body.style.setProperty('--extEnHi', 'hsl(0,0%,22%)');
+	document.body.style.setProperty('--extEnHiShadow', 'hsl(0,0%,35%)');
 	document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
 	document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
 	document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
@@ -158,7 +158,7 @@ function light() {
 
 function gutter() {
 	var styleGut = document.createElement('style');
-	styleGut.innerHTML = '#header {padding: 16px 20px 11px;} .extension, #menu {padding: 5px 10px 5px 20px;} .extension.dev div::before {content:"$"} .extension.out div::before {content:"[]"}';
+	styleGut.innerHTML = '#header {padding: 16px 20px 11px;} .extension, #menu {padding: 5px 10px 5px 20px;} .extension.dev div::before {content:"\u25B8"; margin-top:-2px;} .extension.out div::before {content:"\u25C2"; margin-top: -2px}';
 	document.body.appendChild(styleGut);
 };
 
