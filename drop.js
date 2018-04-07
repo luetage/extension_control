@@ -114,46 +114,46 @@ function userAgent() {
 function dark() {
 	document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
 	document.body.style.setProperty('--fg', 'hsl(207,5%,42%)');
-	document.body.style.setProperty('--fgShadow', '#595e62');
+	document.body.style.setProperty('--fgShadow', 'hsl(207,5%,32%)');
 	document.body.style.setProperty('--headerBg', 'hsl(240,3%,13%)');
 	document.body.style.setProperty('--headerHi', 'hsl(228,57%,73%)');
-	document.body.style.setProperty('--headerHiShadow', '#9ca3d1');
+	document.body.style.setProperty('--headerHiShadow', 'hsl(228, 57%, 58%)');
 	document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
-	document.body.style.setProperty('--headerFgShadow', '#595e62');
+	document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,51%)');
 	document.body.style.setProperty('--extBgHi', 'hsl(240,2%,19%)');
 	document.body.style.setProperty('--extFgHi', 'hsl(228,3%,66%)');
-	document.body.style.setProperty('--extFgHiShadow', '#2d2d2d');
+	document.body.style.setProperty('--extFgHiShadow', 'hsl(228,3%,46%)');
 	document.body.style.setProperty('--extEn', 'hsl(228,57%,73%)');
-	document.body.style.setProperty('--extEnShadow', '#8d94cb');
+	document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,53%)');
 	document.body.style.setProperty('--extEnHi', 'hsl(228,57%,73%)');
-	document.body.style.setProperty('--extEnHiShadow', '#8193dc');
+	document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,53%)');
 	document.body.style.setProperty('--menuBg', 'hsl(240,2%,19%)');
 	document.body.style.setProperty('--menuFgAct', 'hsl(210,2%,81%)');
-	document.body.style.setProperty('--menuFgActHi', '#f0f0f0');
-	document.body.style.setProperty('--optBgHi', '#5aa598');
-	document.body.style.setProperty('--uninstBgHi', '#d5596f');
+	document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
+	document.body.style.setProperty('--optBgHi', 'hsl(170, 29%, 50%)');
+	document.body.style.setProperty('--uninstBgHi', 'hsl(349, 60%, 59%)');
 };
 
 function light() {
 	document.body.style.setProperty('--bg', 'hsl(0,0%,93%)');
 	document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
-	document.body.style.setProperty('--fgShadow', '#c4c5c6');
+	document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
 	document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
-	document.body.style.setProperty('--headerHi', '#d5596f');
-	document.body.style.setProperty('--headerHiShadow', '#808080');
+	document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
+	document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
 	document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
-	document.body.style.setProperty('--headerFgShadow', '#b0b1b5');
-	document.body.style.setProperty('--extBgHi', '#c3c3c9');
-	document.body.style.setProperty('--extFgHi', '#ffffff');
+	document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
+	document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
+	document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
 	document.body.style.setProperty('--extEn', 'hsl(228,57%,42%)');
-	document.body.style.setProperty('--extEnShadow', '#93a3e1');
+	document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
 	document.body.style.setProperty('--extEnHi', 'hsl(228,57%,42%)');
-	document.body.style.setProperty('--extEnHiShadow', '#6d81da');
-	document.body.style.setProperty('--menuBg', '#c3c3c9');
-	document.body.style.setProperty('--menuFgAct', '#ffffff');
-	document.body.style.setProperty('--menuFgActHi', '#f0f0f0');
-	document.body.style.setProperty('--optBgHi', '#5aa598');
-	document.body.style.setProperty('--uninstBgHi', '#d5596f');
+	document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
+	document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
+	document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
+	document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
+	document.body.style.setProperty('--optBgHi', 'hsl(170, 29%, 50%)');
+	document.body.style.setProperty('--uninstBgHi', 'hsl(349, 60%, 59%)');
 };
 
 function gutter() {
