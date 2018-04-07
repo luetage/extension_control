@@ -137,16 +137,16 @@ function dark() {
 function light() {
 	document.body.style.setProperty('--bg', 'hsl(0,0%,93%)');
 	document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
-	document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
+	document.body.style.setProperty('--fgShadow', 'hsl(207,5%,76%)');
 	document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
-	document.body.style.setProperty('--headerHi', 'hsl(0, 0%, 28%)');
-	document.body.style.setProperty('--headerHiShadow', 'hsl(0, 0%, 40%)');
+	document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
+	document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
 	document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
 	document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
 	document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
 	document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
 	document.body.style.setProperty('--extEn', 'hsl(0,0%,28%)');
-	document.body.style.setProperty('--extEnShadow', 'hsl(0,0%,40%)');
+	document.body.style.setProperty('--extEnShadow', 'hsl(0,0%,50%)');
 	document.body.style.setProperty('--extEnHi', 'hsl(0,0%,22%)');
 	document.body.style.setProperty('--extEnHiShadow', 'hsl(0,0%,35%)');
 	document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
