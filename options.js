@@ -4,6 +4,8 @@ const slide = document.getElementById('maxwidth');
 const disp = document.getElementById('display');
 let width = {};
 let theme = {};
+let viv = {};
+let opr = {};
 
 chrome.storage.sync.get({'theme': '', 'width': '195'}, function(start) {
 	width = start.width;
