@@ -145,9 +145,9 @@ function light() {
 	document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
 	document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
 	document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
-	document.body.style.setProperty('--extEn', 'hsl(228,57%,27%)');
+	document.body.style.setProperty('--extEn', 'hsl(228,57%,44%)');
 	document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
-	document.body.style.setProperty('--extEnHi', 'hsl(228,57%,27%)');
+	document.body.style.setProperty('--extEnHi', 'hsl(228,57%,33%)');
 	document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
 	document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
 	document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
