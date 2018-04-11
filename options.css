@@ -45,11 +45,16 @@ body {
 	z-index: 10;
 }
 #header {
-	color: #a6a7ab;
   	font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
 	font-size: 1.2rem; 
 	top: 0;
 	padding: .7rem;
+}
+#version {
+	color: #666c71;
+}
+.norm {
+	color: #a6a7ab;
 }
 #footer {
 	color: #666c71;

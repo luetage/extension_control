@@ -9,10 +9,8 @@ let opr = {};
 
 chrome.management.getSelf(function(info) {
 	const ver = info.version;
-	const span = document.createElement('span');
-	span.innerHTML = ' ' + ver;
-	span.style.color = '#666c71';
-	document.getElementById('header').appendChild(span);
+	const version = document.getElementById('version');
+	version.innerHTML = ' ' + ver;
 });
 
 chrome.storage.sync.get({'theme': '', 'width': '195'}, function(start) {
