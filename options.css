@@ -19,6 +19,7 @@ body {
 	font-size: 14px;
 	letter-spacing: .5px;
 	cursor: default;
+	user-select: none;
 }
 #content {
 	position: absolute;
@@ -33,7 +34,6 @@ body {
 	right: 0;
 	margin: auto;
 	text-align: center;
-	user-select: none;
 }
 #header, #footer {
 	position: fixed;
