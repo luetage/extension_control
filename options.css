@@ -3,12 +3,16 @@
   src: url('fonts/Raleway-Medium.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'Raleway-SemiBold';
+  src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
+}
+@font-face {
   font-family: 'Raleway-Thin';
   src: url('fonts/Raleway-Thin.ttf') format('truetype');
 }
 
 body {
-	background-color: #1e1e20;
+    background-color: hsl(0,0%,10%);
 	margin: 0;
 	font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
 	font-weight: 500;
@@ -17,29 +21,51 @@ body {
 	cursor: default;
 }
 #content {
-	background-color: #191919;
-	box-shadow: inset 0 1px 2px rgba(0,0,0,0.3), 0px 1px 2px rgba(65,65,65,0.4);
+	position: absolute;
 	width: 450px;
-	height: 320px;
-	border: 1px solid #171717;
-	padding: 50px 60px 80px;
+	height: 350px;
+	border-radius: 1px;
 	line-height: 1.5;
 	color: #a6a7ab;
+	top: 0;
+	bottom: 100px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	user-select: none;
+}
+#header, #footer {
 	position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-    user-select: none;
+  	background-color: hsl(240,3%,13%);
+	letter-spacing: .5px;
+	text-align: center;
+	right: 0;
+	left: 0;
+
+}
+#header {
+	color: #a6a7ab;
+  	font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+	font-size: 1.2rem; 
+	top: 0;
+	padding: .7rem;
+}
+#footer {
+	color: #666c71;
+	font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+	font-size: 1rem;
+	bottom: 0;
+	padding: .7rem;
+	border-top: 1px solid rgba(0,0,0,0.5);
+	box-shadow: inset 0 1px 1px rgba(65,65,65,0.4);
 }
 h1 {
 	margin-top: 0;
 	font-family: "Raleway-Thin", "Helvetica Neue", "Helvetica", sans-serif;
 	letter-spacing: .5px;
 	text-align: center;
-	font-size: 1.6rem; 
+	font-size: 1.5rem; 
 	color: #666c71;
 }
 .high {
@@ -80,6 +106,10 @@ h1 {
 	display: inline-block;
 	text-align: left;
 }
+a {
+	color: #d5596f;
+	text-decoration: none;	
+}
 p {
 	margin: 10px 0 10px 0;
 	text-align: left;		
@@ -101,7 +131,7 @@ input:focus {
 	outline: none;
 }
 input[type="range"] {
-    background: #080808;
+    background: hsl(240,3%,8%);
     width: 130px;
     height: 3px;
     -webkit-appearance: none;
