@@ -4,14 +4,20 @@ let width = {};
 let win = {};
 
 userAgent();
-if (win === true) {font()}
+if (win === true) {
+	font();
+}
 
 chrome.storage.sync.get({'theme': '', 'width': '195'}, function(start) {
 	width = start.width;
 	document.body.style.maxWidth = width + 'px';
 	theme = start.theme;
-	if (theme === 'dark') {dark()}
-	else {light()}
+	if (theme === 'dark') {
+		dark();
+	}
+	else {
+		light();
+	}
 });
 
 chrome.management.getAll(function(info) {
@@ -46,10 +52,12 @@ chrome.management.getAll(function(info) {
 			switcher.appendChild(extItem);
 		}
 	}
-	
+
 	const extensions = document.getElementsByClassName('extension');
-	if (gut === true) {gutter()}
-	
+	if (gut === true) {
+		gutter();
+	}
+
 	for (i=0; i<extensions.length; i++) {
   		extensions[i].addEventListener('click', function(i) {
   			extID = extensions[i].getAttribute('id');
@@ -62,14 +70,14 @@ chrome.management.getAll(function(info) {
 				extensions[i].classList.add('enabled');
 			}
   		}.bind(this, i));
-  		
+
   		extensions[i].addEventListener('contextmenu', function(i) {
   			event.preventDefault();
   			rmMenu();
   			extID = extensions[i].getAttribute('id');
   			menu = document.createElement('div');
   			menu.id = 'menu';
-  			extensions[i].insertAdjacentElement('afterend', menu); 
+  			extensions[i].insertAdjacentElement('afterend', menu);
 
   			var unInst = document.createElement('span');
   			unInst.classList.add('uninstall');
@@ -108,7 +116,9 @@ chrome.management.getAll(function(info) {
 function userAgent() {
 	const browser = navigator.userAgent;
 	console.log(browser);
-	if (browser.includes('Windows') === true) {win = true}
+	if (browser.includes('Windows') === true) {
+		win = true;
+	}
 };
 
 function dark() {
@@ -170,7 +180,9 @@ function font() {
 
 function rmMenu() {
 	var thisMenu = document.getElementById('menu');
-	if (thisMenu) {thisMenu.outerHTML = ''}
+	if (thisMenu) {
+		thisMenu.outerHTML = '';
+	}
 };
 
 function extPage() {
@@ -180,4 +192,3 @@ function extPage() {
 switcher.addEventListener('mouseleave', rmMenu);
 switcher.addEventListener('click', rmMenu);
 document.getElementById('header').addEventListener('click', extPage);
-		

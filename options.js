@@ -65,8 +65,12 @@ function setLight() {
 
 function userAgent() {
 	const browser = navigator.userAgent;
-	if (browser.includes('Vivaldi') === true) {viv = true}
-	if (browser.includes('OPR') === true) {opr = true}
+	if (browser.includes('Vivaldi') === true) {
+		viv = true;
+	}
+	if (browser.includes('OPR') === true) {
+		opr = true;
+	}
 };
 
 slide.oninput = function() {
