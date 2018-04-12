@@ -3,10 +3,10 @@
 	"manifest_version": 2,
 	"name": "Extension Control",
 	"short_name": "Ext_Control",
-	"version": "0.30",
+	"version": "0.33",
 	"author": ["luetage, sjudenim"],
 	"description": "Elementary extension manager. Compact design, no superfluous features.",
-	"homepage_url": "https://github.com/luetage/extension_control",
+	"homepage_url": "https://luetage.github.io",
 	"permissions": [
 		"management",
 		"storage"
