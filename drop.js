@@ -1,22 +1,23 @@
 const switcher = document.getElementById('switcher');
 const thisID = chrome.runtime.id;
-let width = {};
-let win = {};
 
-userAgent();
-if (win === true) {
-	font();
-}
-
-chrome.storage.sync.get({'theme': '', 'width': '195'}, function(start) {
-	width = start.width;
+chrome.storage.sync.get({
+	'theme': '',
+	'width': '195',
+	'os': ''
+}, function(start) {
+	const width = start.width;
 	document.body.style.maxWidth = width + 'px';
-	theme = start.theme;
+	const theme = start.theme;
 	if (theme === 'dark') {
 		dark();
 	}
 	else {
 		light();
+	}
+	const os = start.os;
+	if (os === 'win') {
+		font();
 	}
 });
 
@@ -113,14 +114,6 @@ chrome.management.getAll(function(info) {
 	}
 });
 
-function userAgent() {
-	const browser = navigator.userAgent;
-	console.log(browser);
-	if (browser.includes('Windows') === true) {
-		win = true;
-	}
-};
-
 function dark() {
 	document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
 	document.body.style.setProperty('--fg', 'hsl(207,5%,42%)');
@@ -185,10 +178,10 @@ function rmMenu() {
 	}
 };
 
-function extPage() {
+function options() {
 	chrome.runtime.openOptionsPage();
 };
 
 switcher.addEventListener('mouseleave', rmMenu);
 switcher.addEventListener('click', rmMenu);
-document.getElementById('header').addEventListener('click', extPage);
+document.getElementById('header').addEventListener('click', options);

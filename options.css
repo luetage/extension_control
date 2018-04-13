@@ -46,9 +46,12 @@ body {
 }
 #header {
   	font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-	font-size: 1.2rem; 
+	font-size: 1.2rem;
 	top: 0;
 	padding: .7rem;
+}
+#extPage {
+	cursor: pointer;
 }
 #version {
 	color: #666c71;
@@ -70,7 +73,7 @@ h1 {
 	font-family: "Raleway-Thin", "Helvetica Neue", "Helvetica", sans-serif;
 	letter-spacing: .5px;
 	text-align: center;
-	font-size: 1.5rem; 
+	font-size: 1.5rem;
 	color: #666c71;
 }
 .high {
@@ -113,11 +116,11 @@ h1 {
 }
 a {
 	color: #d5596f;
-	text-decoration: none;	
+	text-decoration: none;
 }
 p {
 	margin: 10px 0 10px 0;
-	text-align: left;		
+	text-align: left;
 }
 p:last-of-type {
 	margin-bottom: 0px;
@@ -146,17 +149,17 @@ input[type="range"] {
     box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.8), 0px 1px 1px 0px rgba(255, 255, 255, .05);
 }
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none !important;  
+    -webkit-appearance: none !important;
     width:15px;
     height:15px;
     border-radius: 50%;
     border: 1px solid black;
     background: linear-gradient(90deg,#000 0%, #313131 90%);
     background: -webkit-linear-gradient(90deg,#000 0%, #313131 90%);
- 
+
 }
 input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-slider-thumb:active {
-    -webkit-appearance: none !important;  
+    -webkit-appearance: none !important;
     border: 1px solid #93a3e1;
     background: linear-gradient(90deg,#1c1c1c 0%, #454545 90%);
     background: -webkit-linear-gradient(90deg,#1c1c1c 0%, #454545 90%);
