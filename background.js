@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 });
 
 chrome.runtime.onMessage.addListener(function(message) {
-	if ( message === 'extensions pls' ) {
+	if (message === 'extensions pls') {
 		chrome.storage.sync.get({'browser': ''}, function(getIt) {
 			var browser = getIt.browser;
 			if (browser === 'viv') {
