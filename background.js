@@ -8,10 +8,10 @@ chrome.runtime.onMessage.addListener(function(message) {
 	if ( message === 'extensions pls' ) {
 		chrome.storage.sync.get({'browser': ''}, function(getIt) {
 			var browser = getIt.browser;
-			if (browser = 'viv') {
+			if (browser === 'viv') {
 				chrome.tabs.create({url: 'vivaldi://extensions/'});
 			}
-			else if (browser = 'opr') {
+			else if (browser === 'opr') {
 				chrome.tabs.create({url: 'opera://extensions/'});
 			}
 			else {
