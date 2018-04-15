@@ -6,7 +6,7 @@
 	"version": "0.34",
 	"author": ["luetage, sjudenim"],
 	"description": "Elementary extension manager. Compact design, no superfluous features.",
-	"homepage_url": "https://luetage.github.io",
+	"homepage_url": "https://github.com/luetage/extension_control",
 	"permissions": [
 		"management",
 		"storage"
