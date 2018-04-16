@@ -77,7 +77,6 @@ body {
 .extension.enabled, .extension.enabled:hover {
 	color: var(--extEn);
 }
-
 .extension.enabled:hover {
 	color: var(--extEnHi);
 }
