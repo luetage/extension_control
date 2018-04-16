@@ -1,5 +1,5 @@
 # Extension Control
-![Alt text](/tile.png)
+![ext_control](/tile.png)
 
 `created by luetage and sjudenim for Vivaldi browser`
 
