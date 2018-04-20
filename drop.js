@@ -113,11 +113,11 @@ chrome.management.getAll(function(info) {
 				extItem.classList.remove('out');
 				extItem.classList.add('dev');
         	}
-        	if (info[i].enabled === true) {
+			if (info[i].enabled === true) {
 				extItem.classList.add('enabled');
-        	}
-        	extItem.setAttribute('id', extID);
-       		extItem.innerHTML = '<div>' + info[i].shortName + '</div>';
+			}
+			extItem.setAttribute('id', extID);
+			extItem.innerHTML = '<div>' + info[i].shortName + '</div>';
 			switcher.appendChild(extItem);
 		}
 	}
