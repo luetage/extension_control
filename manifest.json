@@ -31,8 +31,8 @@
       	"default_title": "Extension Control"
 	},
 	"background": {
-		"persistent": false,
-		"scripts": [ "background.js" ]
+		"scripts": [ "background.js" ],
+		"persistent": false
 	}
 
 }
