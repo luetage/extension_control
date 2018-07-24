@@ -15,8 +15,8 @@ body {
     letter-spacing: .5px;
     min-width: 170px;
     min-height: 200px;
-	background: var(--bg);
-	color: var(--fg);
+    background: var(--bg);
+    color: var(--fg);
     margin: 0;
     cursor: default;
     user-select: none;
@@ -29,10 +29,10 @@ body {
 /* Header */
 
 #header {
-	position: fixed;
-	font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-	font-weight: 600;
-	font-size: 15px;
+    position: fixed;
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
     text-align: left;
     padding: 16px 10px 11px;
     width: 100%;
@@ -42,82 +42,82 @@ body {
     z-index: 10;
 }
 #contrast {
-	color: var(--headerHi);
+    color: var(--headerHi);
 }
 
 
 /* Extensions */
 
 #switcher {
-	padding-top: 50px;
-	margin-bottom: 5px;
+    padding-top: 50px;
+    margin-bottom: 5px;
 }
 .extension {
-	padding: 5px 10px;
-	cursor: pointer;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 .extension div {
-	border: 1px solid transparent;
-	width: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    border: 1px solid transparent;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .extension div::before {
-	position: absolute;
-	content: "";
-	text-align: center;
-	left: 1px;
-	width: 20px;
+    position: absolute;
+    content: "";
+    text-align: center;
+    left: 1px;
+    width: 20px;
 }
 .extension:hover {
-	background-color: var(--extBgHi);
-	color: var(--extFgHi);
+    background-color: var(--extBgHi);
+    color: var(--extFgHi);
 }
 .extension.enabled, .extension.enabled:hover {
-	color: var(--extEn);
+    color: var(--extEn);
 }
 .extension.enabled:hover {
-	color: var(--extEnHi);
+    color: var(--extEnHi);
 }
 
 
 /* Menu */
 
 #menu {
-	padding: 5px 10px;
-	white-space: nowrap;
-	overflow: hidden;
+    padding: 5px 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .options, .uninstall {
-	font-size: 12px;
-	font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-	font-weight: 600;
-	width: 48%;
-	text-align: center;
-	padding: 8px 0;
-	border-radius: 3px;
-	background-color: var(--menuBg);
+    font-size: 12px;
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    width: 48%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 3px;
+    background-color: var(--menuBg);
 }
 .options {
-	float: left;
-	color: var(--menuFgDis);
-	cursor: default;
+    float: left;
+    color: var(--menuFgDis);
+    cursor: default;
 }
 .options.optActive {
-	color: var(--menuFgAct);
-	cursor: pointer;
+    color: var(--menuFgAct);
+    cursor: pointer;
 }
 .options.optActive:hover {
-	background-color: var(--optBgHi);
-	color: var(--menuFgActHi) !important;
+    background-color: var(--optBgHi);
+    color: var(--menuFgActHi) !important;
 }
 .uninstall {
-	float: right;
-	color: var(--menuFgAct);
-	cursor: pointer;
+    float: right;
+    color: var(--menuFgAct);
+    cursor: pointer;
 }
 .uninstall:hover {
-	background-color: var(--uninstBgHi);
-	color: var(--menuFgActHi) !important;
+    background-color: var(--uninstBgHi);
+    color: var(--menuFgActHi) !important;
 }

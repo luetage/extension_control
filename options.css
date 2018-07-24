@@ -13,130 +13,130 @@
 
 body {
     background-color: hsl(0,0%,10%);
-	margin: 0;
-	font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
-	font-weight: 500;
-	font-size: 14px;
-	letter-spacing: .5px;
-	cursor: default;
-	user-select: none;
+    margin: 0;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .5px;
+    cursor: default;
+    user-select: none;
 }
 #content {
-	position: absolute;
-	width: 450px;
-	height: 350px;
-	border-radius: 1px;
-	line-height: 1.5;
-	color: #a6a7ab;
-	top: 0;
-	bottom: 15vh;
-	left: 0;
-	right: 0;
-	margin: auto;
-	text-align: center;
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    border-radius: 1px;
+    line-height: 1.5;
+    color: #a6a7ab;
+    top: 0;
+    bottom: 15vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 #header, #footer {
-	position: fixed;
-  	background-color: hsl(240,3%,13%);
-	letter-spacing: .5px;
-	text-align: center;
-	right: 0;
-	left: 0;
-	z-index: 10;
+    position: fixed;
+      background-color: hsl(240,3%,13%);
+    letter-spacing: .5px;
+    text-align: center;
+    right: 0;
+    left: 0;
+    z-index: 10;
 }
 #header {
-  	font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-	font-size: 1.2rem;
-	top: 0;
-	padding: .7rem;
+      font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 1.2rem;
+    top: 0;
+    padding: .7rem;
 }
 #extPage {
-	cursor: pointer;
+    cursor: pointer;
 }
 #version {
-	color: #666c71;
+    color: #666c71;
 }
 .norm {
-	color: #a6a7ab;
+    color: #a6a7ab;
 }
 #footer {
-	color: #666c71;
-	font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
-	font-size: 1rem;
-	bottom: 0;
-	padding: .7rem;
-	border-top: 1px solid rgba(0,0,0,0.5);
-	box-shadow: inset 0 1px 1px rgba(65,65,65,0.4);
+    color: #666c71;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 1rem;
+    bottom: 0;
+    padding: .7rem;
+    border-top: 1px solid rgba(0,0,0,0.5);
+    box-shadow: inset 0 1px 1px rgba(65,65,65,0.4);
 }
 h1 {
-	margin-top: 0;
-	font-family: "Raleway-Thin", "Helvetica Neue", "Helvetica", sans-serif;
-	letter-spacing: .5px;
-	text-align: center;
-	font-size: 1.5rem;
-	color: #666c71;
+    margin-top: 0;
+    font-family: "Raleway-Thin", "Helvetica Neue", "Helvetica", sans-serif;
+    letter-spacing: .5px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666c71;
 }
 .high {
-	color: #93a3e1;
+    color: #93a3e1;
 }
 
 .float {
-	white-space: nowrap;
-	overflow: hidden;
-	margin-bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 .left {
-	float: left;
+    float: left;
 }
 .right {
-	float: right;
+    float: right;
 }
 #dark, #light {
-	color: #666c71;
-	cursor: pointer;
+    color: #666c71;
+    cursor: pointer;
 }
 #light {
-	margin-left: 50px
+    margin-left: 50px
 }
 #dark:hover, #light:hover {
-	color: #a6a7ab;
+    color: #a6a7ab;
 }
 #dark.enabled, #light.enabled, #display {
-	color: #d5596f;
+    color: #d5596f;
 }
 #display {
-	display: inline-block;
-	width: 50px;
-	text-align: right;
-	margin-left: 10px;
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+    margin-left: 10px;
 }
 .centre {
-	display: inline-block;
-	text-align: left;
+    display: inline-block;
+    text-align: left;
 }
 a {
-	color: #d5596f;
-	text-decoration: none;
+    color: #d5596f;
+    text-decoration: none;
 }
 p {
-	margin: 10px 0 10px 0;
-	text-align: left;
+    margin: 10px 0 10px 0;
+    text-align: left;
 }
 p:last-of-type {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 p:first-of-type {
-	margin-top: 0px;
+    margin-top: 0px;
 }
 
 
 /* Range slider */
 
 input {
-	cursor: pointer;
+    cursor: pointer;
 }
 input:focus {
-	outline: none;
+    outline: none;
 }
 input[type="range"] {
     background: hsl(240,3%,8%);

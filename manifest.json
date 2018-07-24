@@ -1,38 +1,38 @@
 {
 
-	"manifest_version": 2,
-	"name": "Extension Control",
-	"short_name": "Ext_Control",
-	"version": "0.36",
-	"author": ["luetage, sjudenim"],
-	"description": "Elementary extension manager. Compact design, no superfluous features.",
-	"homepage_url": "https://github.com/luetage/extension_control",
-	"permissions": [
-		"management",
-		"storage"
+    "manifest_version": 2,
+    "name": "Extension Control",
+    "short_name": "Ext_Control",
+    "version": "0.36",
+    "author": ["luetage, sjudenim"],
+    "description": "Elementary extension manager. Compact design, no superfluous features.",
+    "homepage_url": "https://github.com/luetage/extension_control",
+    "permissions": [
+        "management",
+        "storage"
     ],
     "options_ui": {
-    	"page": "options.html",
-		"open_in_tab": true
-	},
+        "page": "options.html",
+        "open_in_tab": true
+    },
     "offline_enabled": true,
-	"icons": {
-		"16": "icons/icn16.png",
-		"48": "icons/icn48.png",
-    	"128": "icons/icn128.png"
+    "icons": {
+        "16": "icons/icn16.png",
+        "48": "icons/icn48.png",
+        "128": "icons/icn128.png"
     },
     "browser_action": {
-    	"default_icon": {
-    		"16": "icons/icn16.png",
-    		"24": "icons/icn24.png",
-    		"38": "icons/icn38.png"
-    	},
-      	"default_popup": "drop.html",
-      	"default_title": "Extension Control"
-	},
-	"background": {
-		"scripts": [ "background.js" ],
-		"persistent": false
-	}
+        "default_icon": {
+            "16": "icons/icn16.png",
+            "24": "icons/icn24.png",
+            "38": "icons/icn38.png"
+        },
+          "default_popup": "drop.html",
+          "default_title": "Extension Control"
+    },
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": false
+    }
 
 }
