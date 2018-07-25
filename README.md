@@ -16,6 +16,6 @@ Extension Control is a lightweight extension manager designed for those who want
 * switch between dark and light theme
 * set maximum width of the popup
 
-## Why another extension manager?
+## Why another extension manager
 
 We felt that the current extension managers available for chromium browsers had features we didn't need and mostly dated, bloated design. Extension Control adjusts to your needs and preferences. For example it introduces font shadows specifically for Windows, for better reading. The extension has been tested on Chrome, Opera and Vivaldi, but should generally run just fine on any Chromium browser.
