@@ -11,7 +11,6 @@
 body {
     font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 13px;
     letter-spacing: .5px;
     min-width: 170px;
     min-height: 200px;
@@ -32,7 +31,6 @@ body {
     position: fixed;
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
-    font-size: 15px;
     text-align: left;
     padding: 16px 10px 11px;
     width: 100%;
@@ -90,7 +88,6 @@ body {
     overflow: hidden;
 }
 .options, .uninstall {
-    font-size: 12px;
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     width: 48%;

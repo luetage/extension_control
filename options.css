@@ -91,17 +91,17 @@ h1 {
 .right {
     float: right;
 }
-#dark, #light {
+#dark, #light, #small, #medium, #large {
     color: #666c71;
     cursor: pointer;
 }
-#light {
-    margin-left: 50px
+#light, #medium, #large {
+    margin-left: 40px
 }
-#dark:hover, #light:hover {
+#dark:hover, #light:hover, #small:hover, #medium:hover, #large:hover {
     color: #a6a7ab;
 }
-#dark.enabled, #light.enabled, #display {
+#dark.enabled, #light.enabled, #small.enabled, #medium.enabled, #large.enabled, #display {
     color: #d5596f;
 }
 #display {

@@ -46,6 +46,24 @@ function light() {
     document.body.style.setProperty('--uninstBgHi', 'hsl(349, 60%, 59%)');
 };
 
+function small() {
+    var fontsize = document.createElement('style');
+    fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall {font-size: 11px}';
+    document.body.appendChild(fontsize);
+};
+
+function medium() {
+    var fontsize = document.createElement('style');
+    fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall {font-size: 12px}';
+    document.body.appendChild(fontsize);
+};
+
+function large() {
+    var fontsize = document.createElement('style');
+    fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall {font-size: 13px}';
+    document.body.appendChild(fontsize);
+};
+
 function gutter() {
     var styleGut = document.createElement('style');
     styleGut.innerHTML = '#header {padding: 16px 20px 11px;} .extension, #menu {padding: 5px 10px 5px 20px;} .extension.dev div::before {content:"$"} .extension.out div::before {content:"[]"}';
@@ -72,6 +90,7 @@ function options() {
 chrome.storage.sync.get({
     'theme': '',
     'width': '195',
+    'fontsize': 'medium',
     'os': ''
 }, function(start) {
     const width = start.width;
@@ -82,6 +101,16 @@ chrome.storage.sync.get({
     }
     else {
         light();
+    }
+    const fontsize = start.fontsize;
+    if (fontsize === 'small') {
+        small();
+    }
+    else if (fontsize === 'medium') {
+        medium();
+    }
+    else {
+        large();
     }
     const os = start.os;
     if (os === 'win') {
