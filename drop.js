@@ -157,8 +157,8 @@ chrome.management.getAll(function(info) {
     }
 
     for (i=0; i<extensions.length; i++) {
-          extensions[i].addEventListener('click', function(i) {
-              extID = extensions[i].getAttribute('id');
+        extensions[i].addEventListener('click', function(i) {
+            extID = extensions[i].getAttribute('id');
             if (extensions[i].classList.contains('enabled')) {
                 chrome.management.setEnabled(extID, false);
                 extensions[i].classList.remove('enabled');
@@ -167,47 +167,46 @@ chrome.management.getAll(function(info) {
                 chrome.management.setEnabled(extID, true);
                 extensions[i].classList.add('enabled');
             }
-          }.bind(this, i));
+        }.bind(this, i));
 
-          extensions[i].addEventListener('contextmenu', function(i) {
-              event.preventDefault();
-              rmMenu();
-              extID = extensions[i].getAttribute('id');
-              menu = document.createElement('div');
-              menu.id = 'menu';
-              extensions[i].insertAdjacentElement('afterend', menu);
-
-              var unInst = document.createElement('span');
-              unInst.classList.add('uninstall');
-              unInst.innerHTML = 'uninstall';
+        extensions[i].addEventListener('contextmenu', function(i) {
+            event.preventDefault();
+            rmMenu();
+            extID = extensions[i].getAttribute('id');
+            menu = document.createElement('div');
+            menu.id = 'menu';
+            extensions[i].insertAdjacentElement('afterend', menu);
+            var unInst = document.createElement('span');
+            unInst.classList.add('uninstall');
+            unInst.innerHTML = 'uninstall';
             menu.appendChild(unInst);
-              unInst.addEventListener('click', function() {
-                  chrome.management.uninstall(extID, function() {
-                      if (chrome.runtime.lastError) {
-                          extensions[i].style.display = 'block';
-                      }
-                      else {
-                          extensions[i].style.display = 'none';
-                      }
-                  });
-              });
+            unInst.addEventListener('click', function() {
+                chrome.management.uninstall(extID, function() {
+                    if (chrome.runtime.lastError) {
+                        extensions[i].style.display = 'block';
+                    }
+                    else {
+                        extensions[i].style.display = 'none';
+                    }
+                });
+            });
 
-              var options = document.createElement('span');
-              options.classList.add('options');
-              options.innerHTML = 'options';
-              chrome.management.get(extID, function(opt) {
+            var options = document.createElement('span');
+            options.classList.add('options');
+            options.innerHTML = 'options';
+            chrome.management.get(extID, function(opt) {
                 var extOpt = opt.optionsUrl;
                 if (extOpt !== '') {
                     menu.appendChild(options);
                     if (opt.enabled === true) {
                         options.classList.add('optActive');
-                          options.addEventListener('click', function() {
+                        options.addEventListener('click', function() {
                             chrome.tabs.create({url: extOpt});
                         });
                     }
                 }
             });
-          }.bind(this, i));
+        }.bind(this, i));
     }
 });
 
