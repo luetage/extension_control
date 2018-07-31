@@ -15,6 +15,7 @@ Extension Control is a lightweight extension manager designed for those who want
 * access extension options
 * switch between dark and light theme
 * set maximum width of the popup
+* set the fontsize
 
 ## Why another extension manager
 
