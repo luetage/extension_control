@@ -125,7 +125,6 @@ chrome.management.getAll(function(info) {
     let gut = {};
     info.sort(function (a,b) {
         return a.shortName.trim().localeCompare(b.shortName.trim());
-        return (a.shortName.replace(/\s/g,'').toLowerCase() < b.shortName.replace(/\s/g,'').toLowerCase());
     });
 
     for (i=0; i<info.length; i++) {
