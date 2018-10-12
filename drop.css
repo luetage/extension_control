@@ -49,7 +49,6 @@ body {
     position: relative;
     max-height: 525px;
     overflow-y: auto;
-    margin-top: 43px;
     margin-bottom: 5px;
 }
 .extension {

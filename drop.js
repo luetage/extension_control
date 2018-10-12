@@ -48,19 +48,19 @@ function light() {
 
 function small() {
     var fontsize = document.createElement('style');
-    fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall {font-size: 11px}';
+    fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall {font-size: 11px}, #switcher {margin-top: 43px}';
     document.body.appendChild(fontsize);
 };
 
 function medium() {
     var fontsize = document.createElement('style');
-    fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall {font-size: 12px}';
+    fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall {font-size: 12px}, #switcher {margin-top: 45px}';
     document.body.appendChild(fontsize);
 };
 
 function large() {
     var fontsize = document.createElement('style');
-    fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall {font-size: 13px}';
+    fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall {font-size: 13px}, #switcher {margin-top: 46px}';
     document.body.appendChild(fontsize);
 };
 
