@@ -47,7 +47,7 @@ body {
 
 #switcher {
     position: relative;
-    max-height: 525px;
+    max-height: var(--height);
     overflow-y: auto;
     margin-top: var(--top);
     margin-bottom: 5px;
