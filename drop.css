@@ -9,6 +9,7 @@
 
 
 body {
+    display: block;
     font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
     letter-spacing: .5px;
@@ -20,15 +21,13 @@ body {
     cursor: default;
     user-select: none;
 }
-::-webkit-scrollbar {
-    display: none !important;
-}
 
 
 /* Header */
 
 #header {
     position: fixed;
+    top: 0;
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     text-align: left;
@@ -47,12 +46,18 @@ body {
 /* Extensions */
 
 #switcher {
-    padding-top: 50px;
+    position: relative;
+    max-height: 525px;
+    overflow-y: auto;
+    margin-top: 43px;
     margin-bottom: 5px;
 }
 .extension {
     padding: 5px 10px;
     cursor: pointer;
+}
+.extension:first-of-type {
+    margin-top: 5px;
 }
 .extension div {
     border: 1px solid transparent;
