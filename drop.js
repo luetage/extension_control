@@ -50,7 +50,7 @@ function light() {
 
 function small() {
     document.body.style.setProperty('--top', '48px');
-    document.body.style.setProperty('--height', '525px');
+    document.body.style.setProperty('--height', '520px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall, .info, .hide {font-size: 11px}';
     document.body.appendChild(fontsize);
@@ -58,7 +58,7 @@ function small() {
 
 function medium() {
     document.body.style.setProperty('--top', '50px');
-    document.body.style.setProperty('--height','518px');
+    document.body.style.setProperty('--height','513px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall, .info, .hide {font-size: 12px}';
     document.body.appendChild(fontsize);
@@ -66,7 +66,7 @@ function medium() {
 
 function large() {
     document.body.style.setProperty('--top', '51px');
-    document.body.style.setProperty('--height', '537px');
+    document.body.style.setProperty('--height', '532px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall, .info, .hide {font-size: 13px}';
     document.body.appendChild(fontsize);
