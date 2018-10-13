@@ -31,7 +31,7 @@ body {
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     text-align: left;
-    padding: 16px 10px 11px;
+    padding: 16px 15px 11px;
     width: 100%;
     background-color: var(--headerBg);
     color: var(--headerFg);
@@ -56,7 +56,7 @@ body {
     overflow-y: overlay;
 }
 .extension {
-    padding: 5px 15px 5px 10px;
+    padding: 5px 15px 5px 15px;
     cursor: pointer;
 }
 .extension:first-of-type {
@@ -91,7 +91,7 @@ body {
 /* Menu */
 
 #menu {
-    padding: 5px 15px 5px 10px;
+    padding: 5px 15px 5px 15px;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -145,7 +145,7 @@ body {
 /* Info */
 
 #txtdiv {
-    padding: 0 15px 0 10px;
+    padding: 0 15px 0 15px;
     border: 1px solid transparent;
     white-space: normal;
     word-break: break-all;
