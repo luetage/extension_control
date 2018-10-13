@@ -38,8 +38,7 @@ body {
     cursor: pointer;
     z-index: 10;
 }
-
-#contrast {color: var(--headerHi)}
+.contrast {color: var(--headerHi)}
 
 
 /* Extensions */
@@ -47,41 +46,34 @@ body {
 #switcher {
     position: relative;
     max-height: var(--height);
-    overflow: hidden;
+    overflow-y: hidden;
     margin-top: var(--top);
     margin-bottom: 5px;
-    right: 5px
 }
-
 #switcher:hover {overflow-y: auto}
 
 .extension {
-    padding: 5px 10px;
+    padding: 5px 15px 5px 10px;
     cursor: pointer;
 }
-
-.extension:first-of-type {margin-top: 5px}
-
 .extension div {
     border: 1px solid transparent;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-left: 5px;
 }
 .extension div::before {
     position: absolute;
     content: "";
     text-align: center;
-    left: 5px;
+    left: 1px;
     width: 20px;
 }
 .extension:hover {
     background-color: var(--extBgHi);
     color: var(--extFgHi);
 }
-
 .extension.enabled, .extension.enabled:hover {color: var(--extEn)}
 
 .extension.enabled:hover {color: var(--extEnHi)}
@@ -90,11 +82,11 @@ body {
 /* Menu */
 
 #menu {
-    padding: 5px 10px;
+    padding: 5px 15px 5px 10px;
     white-space: nowrap;
     overflow: hidden;
 }
-.options, .uninstall {
+.info, .hide, .options, .uninstall {
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     width: 48%;
@@ -103,8 +95,20 @@ body {
     border-radius: 3px;
     background-color: var(--menuBg);
 }
+.info {
+    float: left;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
+.hide {
+    float: right;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
 .options {
     float: left;
+    clear: left;
+    margin-top: 5px;
     color: var(--menuFgDis);
     cursor: default;
 }
@@ -112,31 +116,58 @@ body {
     color: var(--menuFgAct);
     cursor: pointer;
 }
-.options.optActive:hover {
-    background-color: var(--optBgHi);
+.info:hover, .hide:hover, .options.optActive:hover {
+    background-color: var(--menuBgHi);
     color: var(--menuFgActHi) !important;
 }
 .uninstall {
     float: right;
+    clear: right;
+    margin-top: 5px;
     color: var(--menuFgAct);
     cursor: pointer;
 }
 .uninstall:hover {
-    background-color: var(--uninstBgHi);
+    background-color: var(--menuBgHi2);
     color: var(--menuFgActHi) !important;
+}
+
+
+/* Info */
+
+#txtdiv {
+    padding: 0 15px 0 10px;
+    border: 1px solid transparent;
+    white-space: normal;
+    word-break: break-all;
+    margin-top: 0px;
+}
+#txtdiv p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+#txtdiv p:first-of-type {
+    margin-bottom: 4px;
+}
+.desc {
+    color: var(--desc)
+}
+#copy {
+    cursor: pointer;
 }
 
 
 /* Scrollbar */
 
-::-webkit-scrollbar {
-    position: absolute;
-    width: 5px;
+::-webkit-scrollbar {width: 8px}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px rgba(0,0,0,.2);
+    border-right: solid 3px transparent;
+    border-radius: 3px 5px 5px 3px
 }
-
-::-webkit-scrollbar-track {background: rgba(0,0,0,.2) }
-
 ::-webkit-scrollbar-thumb {
-    background: var(--headerHi);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.6); 
+    box-shadow: inset 0 0 15px var(--headerHi);
+    border-right: solid 3px transparent;
+    border-radius: 3px 5px 5px 3px;
 }
