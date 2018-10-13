@@ -20,8 +20,9 @@ function dark() {
     document.body.style.setProperty('--menuBg', 'hsl(240,2%,19%)');
     document.body.style.setProperty('--menuFgAct', 'hsl(210,2%,81%)');
     document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
-    document.body.style.setProperty('--optBgHi', 'hsl(170, 29%, 50%)');
-    document.body.style.setProperty('--uninstBgHi', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
+    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--desc', 'hsl(228,3%,66%)');
 };
 
 function light() {
@@ -42,23 +43,24 @@ function light() {
     document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
     document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
     document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
-    document.body.style.setProperty('--optBgHi', 'hsl(170, 29%, 50%)');
-    document.body.style.setProperty('--uninstBgHi', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
+    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
 };
 
 function small() {
     document.body.style.setProperty('--top', '48px');
     document.body.style.setProperty('--height', '525px');
     var fontsize = document.createElement('style');
-    fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall {font-size: 11px}';
+    fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall, .info, .hide {font-size: 11px}';
     document.body.appendChild(fontsize);
 };
 
 function medium() {
     document.body.style.setProperty('--top', '50px');
-    document.body.style.setProperty('--height', '518px');
+    document.body.style.setProperty('--height','518px');
     var fontsize = document.createElement('style');
-    fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall {font-size: 12px}';
+    fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall, .info, .hide {font-size: 12px}';
     document.body.appendChild(fontsize);
 };
 
@@ -66,13 +68,13 @@ function large() {
     document.body.style.setProperty('--top', '51px');
     document.body.style.setProperty('--height', '537px');
     var fontsize = document.createElement('style');
-    fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall {font-size: 13px}';
+    fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall, .info, .hide {font-size: 13px}';
     document.body.appendChild(fontsize);
 };
 
 function gutter() {
     var styleGut = document.createElement('style');
-    styleGut.innerHTML = '#header {padding: 16px 20px 11px;} .extension, #menu {padding: 5px 10px 5px 20px;} .extension.dev div::before {content:"$"} .extension.out div::before {content:"[]"}';
+    styleGut.innerHTML = '#header {padding: 16px 20px 11px;} .extension, #menu {padding: 5px 15px 5px 20px;} #txtdiv {padding: 0 15px 0 20px} .extension.dev div::before {content:"$"} .extension.out div::before {content:"[]"}';
     document.body.appendChild(styleGut);
 };
 
@@ -83,9 +85,13 @@ function font() {
 };
 
 function rmMenu() {
-    var thisMenu = document.getElementById('menu');
+    const thisMenu = document.getElementById('menu');
+    const thisInfo = document.getElementById('txtdiv');
     if (thisMenu) {
         thisMenu.outerHTML = '';
+    }
+    if (thisInfo) {
+        thisInfo.outerHTML = '';
     }
 };
 
@@ -163,6 +169,7 @@ chrome.management.getAll(function(info) {
 
     for (i=0; i<extensions.length; i++) {
         extensions[i].addEventListener('click', function(i) {
+            rmMenu();
             extID = extensions[i].getAttribute('id');
             if (extensions[i].classList.contains('enabled')) {
                 chrome.management.setEnabled(extID, false);
@@ -181,21 +188,45 @@ chrome.management.getAll(function(info) {
             menu = document.createElement('div');
             menu.id = 'menu';
             extensions[i].insertAdjacentElement('afterend', menu);
-            var unInst = document.createElement('span');
-            unInst.classList.add('uninstall');
-            unInst.innerHTML = 'uninstall';
-            menu.appendChild(unInst);
-            unInst.addEventListener('click', function() {
-                chrome.management.uninstall(extID, function() {
-                    if (chrome.runtime.lastError) {
-                        extensions[i].style.display = 'block';
-                    }
-                    else {
-                        extensions[i].style.display = 'none';
-                    }
-                });
+
+            // info
+            var inf = document.createElement('span');
+            inf.classList.add('info');
+            inf.innerHTML = 'info';
+            menu.appendChild(inf);
+            inf.addEventListener('click', function() {
+                const toggle = document.getElementById('txtdiv');
+                if (toggle) {
+                    toggle.outerHTML = '';
+                }
+                else {
+                    chrome.management.get(extID, function(text) {
+                        var version = text.version;
+                        var txtdiv = document.createElement('div');
+                        txtdiv.id = 'txtdiv';
+                        txtdiv.innerHTML = '<p><span class="desc">version </span>' + version + '</p><span class="desc">id </span><span id="copy">' + extID + '</span></p>';
+                        extensions[i].insertAdjacentElement('afterend', txtdiv);
+                        const cpID = document.getElementById('copy');cpID.addEventListener('click', function() {
+                            navigator.clipboard.writeText(extID);
+                            cpID.style.cursor = 'default';
+                            cpID.innerHTML = 'copied';
+                        });
+                    });
+                }
             });
 
+            //hide
+            var hide = document.createElement('span');
+            hide.classList.add('hide');
+            hide.innerHTML = 'hide';
+            menu.appendChild(hide);
+            hide.addEventListener('click', function() {
+
+                rmMenu();
+                extensions[i].style.display = 'none';
+            });
+
+            //options
             var options = document.createElement('span');
             options.classList.add('options');
             options.innerHTML = 'options';
@@ -211,10 +242,26 @@ chrome.management.getAll(function(info) {
                     }
                 }
             });
+
+            // uninstall
+            var unInst = document.createElement('span');
+            unInst.classList.add('uninstall');
+            unInst.innerHTML = 'uninstall';
+            menu.appendChild(unInst);
+            unInst.addEventListener('click', function() {
+                chrome.management.uninstall(extID, function() {
+                    if (chrome.runtime.lastError) {
+                        extensions[i].style.display = 'block';
+                    }
+                    else {
+                        rmMenu();
+                        extensions[i].style.display = 'none';
+                    }
+                });
+            });
         }.bind(this, i));
     }
 });
 
 switcher.addEventListener('mouseleave', rmMenu);
-switcher.addEventListener('click', rmMenu);
 document.getElementById('header').addEventListener('click', options);
