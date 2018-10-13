@@ -51,6 +51,7 @@ body {
     overflow-y: hidden;
     margin-top: var(--top);
     margin-bottom: 5px;
+    right: 5px
 }
 #switcher:hover {
     overflow-y: overlay;
@@ -59,33 +60,32 @@ body {
     padding: 5px 15px 5px 10px;
     cursor: pointer;
 }
-.extension:first-of-type {
-    margin-top: 5px;
-}
+
+.extension:first-of-type {margin-top: 5px}
+
 .extension div {
     border: 1px solid transparent;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-left: 5px;
 }
 .extension div::before {
     position: absolute;
     content: "";
     text-align: center;
-    left: 1px;
+    left: 5px;
     width: 20px;
 }
 .extension:hover {
     background-color: var(--extBgHi);
     color: var(--extFgHi);
 }
-.extension.enabled, .extension.enabled:hover {
-    color: var(--extEn);
-}
-.extension.enabled:hover {
-    color: var(--extEnHi);
-}
+
+.extension.enabled, .extension.enabled:hover {color: var(--extEn)}
+
+.extension.enabled:hover {color: var(--extEnHi)}
 
 
 /* Menu */
