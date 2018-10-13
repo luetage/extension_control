@@ -38,7 +38,7 @@ body {
     cursor: pointer;
     z-index: 10;
 }
-#contrast {
+.contrast {
     color: var(--headerHi);
 }
 
@@ -48,12 +48,15 @@ body {
 #switcher {
     position: relative;
     max-height: var(--height);
-    overflow-y: auto;
+    overflow-y: hidden;
     margin-top: var(--top);
     margin-bottom: 5px;
 }
+#switcher:hover {
+    overflow-y: overlay;
+}
 .extension {
-    padding: 5px 10px;
+    padding: 5px 15px 5px 10px;
     cursor: pointer;
 }
 .extension:first-of-type {
@@ -88,11 +91,11 @@ body {
 /* Menu */
 
 #menu {
-    padding: 5px 10px;
+    padding: 5px 15px 5px 10px;
     white-space: nowrap;
     overflow: hidden;
 }
-.options, .uninstall {
+.info, .hide, .options, .uninstall {
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     width: 48%;
@@ -101,8 +104,20 @@ body {
     border-radius: 3px;
     background-color: var(--menuBg);
 }
+.info {
+    float: left;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
+.hide {
+    float: right;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
 .options {
     float: left;
+    clear: left;
+    margin-top: 5px;
     color: var(--menuFgDis);
     cursor: default;
 }
@@ -110,16 +125,53 @@ body {
     color: var(--menuFgAct);
     cursor: pointer;
 }
-.options.optActive:hover {
-    background-color: var(--optBgHi);
+.info:hover, .hide:hover, .options.optActive:hover {
+    background-color: var(--menuBgHi);
     color: var(--menuFgActHi) !important;
 }
 .uninstall {
     float: right;
+    clear: right;
+    margin-top: 5px;
     color: var(--menuFgAct);
     cursor: pointer;
 }
 .uninstall:hover {
-    background-color: var(--uninstBgHi);
+    background-color: var(--menuBgHi2);
     color: var(--menuFgActHi) !important;
+}
+
+
+/* Info */
+
+#txtdiv {
+    padding: 0 15px 0 10px;
+    border: 1px solid transparent;
+    white-space: normal;
+    word-break: break-all;
+    margin-top: 0px;
+}
+#txtdiv p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+#txtdiv p:first-of-type {
+    margin-bottom: 4px;
+}
+.desc {
+    color: var(--desc)
+}
+#copy {
+    cursor: pointer;
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--headerHi);
+    border-radius: 5px;
 }
