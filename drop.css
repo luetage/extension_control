@@ -38,9 +38,8 @@ body {
     cursor: pointer;
     z-index: 10;
 }
-#contrast {
-    color: var(--headerHi);
-}
+
+#contrast {color: var(--headerHi)}
 
 
 /* Extensions */
@@ -48,41 +47,44 @@ body {
 #switcher {
     position: relative;
     max-height: var(--height);
-    overflow-y: auto;
+    overflow: hidden;
     margin-top: var(--top);
     margin-bottom: 5px;
+    right: 5px
 }
+
+#switcher:hover {overflow-y: auto}
+
 .extension {
     padding: 5px 10px;
     cursor: pointer;
 }
-.extension:first-of-type {
-    margin-top: 5px;
-}
+
+.extension:first-of-type {margin-top: 5px}
+
 .extension div {
     border: 1px solid transparent;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-left: 5px;
 }
 .extension div::before {
     position: absolute;
     content: "";
     text-align: center;
-    left: 1px;
+    left: 5px;
     width: 20px;
 }
 .extension:hover {
     background-color: var(--extBgHi);
     color: var(--extFgHi);
 }
-.extension.enabled, .extension.enabled:hover {
-    color: var(--extEn);
-}
-.extension.enabled:hover {
-    color: var(--extEnHi);
-}
+
+.extension.enabled, .extension.enabled:hover {color: var(--extEn)}
+
+.extension.enabled:hover {color: var(--extEnHi)}
 
 
 /* Menu */
@@ -122,4 +124,19 @@ body {
 .uninstall:hover {
     background-color: var(--uninstBgHi);
     color: var(--menuFgActHi) !important;
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    position: absolute;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {background: transparent}
+
+::-webkit-scrollbar-thumb {
+    background: var(--headerHi);
+    border-radius: 5px;
 }
