@@ -31,16 +31,14 @@ body {
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     text-align: left;
-    padding: 16px 15px 11px;
+    padding: 16px 10px 11px;
     width: 100%;
     background-color: var(--headerBg);
     color: var(--headerFg);
     cursor: pointer;
     z-index: 10;
 }
-.contrast {
-    color: var(--headerHi);
-}
+.contrast {color: var(--headerHi)}
 
 
 /* Extensions */
@@ -76,12 +74,9 @@ body {
     background-color: var(--extBgHi);
     color: var(--extFgHi);
 }
-.extension.enabled, .extension.enabled:hover {
-    color: var(--extEn);
-}
-.extension.enabled:hover {
-    color: var(--extEnHi);
-}
+.extension.enabled, .extension.enabled:hover {color: var(--extEn)}
+
+.extension.enabled:hover {color: var(--extEnHi)}
 
 
 /* Menu */
@@ -170,4 +165,9 @@ body {
     box-shadow: inset 0 0 15px rgba(0,0,0,.2);
     border-right: solid 3px transparent;
     border-radius: 3px 5px 5px 3px
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 15px var(--headerHi);
+    border-right: solid 3px transparent;
+    border-radius: 3px 5px 5px 3px;
 }
