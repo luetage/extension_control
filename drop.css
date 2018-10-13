@@ -134,9 +134,9 @@ body {
     width: 5px;
 }
 
-::-webkit-scrollbar-track {background: transparent}
+::-webkit-scrollbar-track {background: rgba(0,0,0,.2) }
 
 ::-webkit-scrollbar-thumb {
     background: var(--headerHi);
-    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.9); 
 }
