@@ -49,7 +49,7 @@ function light() {
 };
 
 function small() {
-    document.body.style.setProperty('--top', '43px');
+    document.body.style.setProperty('--top', '48px');
     document.body.style.setProperty('--height', '525px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall, .info, .hide {font-size: 11px}';
@@ -57,7 +57,7 @@ function small() {
 };
 
 function medium() {
-    document.body.style.setProperty('--top', '45px');
+    document.body.style.setProperty('--top', '50px');
     document.body.style.setProperty('--height','518px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall, .info, .hide {font-size: 12px}';
@@ -65,7 +65,7 @@ function medium() {
 };
 
 function large() {
-    document.body.style.setProperty('--top', '46px');
+    document.body.style.setProperty('--top', '51px');
     document.body.style.setProperty('--height', '537px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall, .info, .hide {font-size: 13px}';
