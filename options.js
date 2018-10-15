@@ -1,5 +1,7 @@
-const optDark = document.getElementById('dark');
-const optLight = document.getElementById('light');
+const optDay = document.getElementById('day');
+const optMidday = document.getElementById('midday');
+const optNight = document.getElementById('night');
+const optMidnight = document.getElementById('midnight');
 const optSmall = document.getElementById('small');
 const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
@@ -24,12 +26,18 @@ chrome.storage.sync.get({
     slide.value = width;
     disp.innerHTML = width + 'px';
     theme = start.theme;
-    if (theme === 'dark') {
-        optDark.classList.add('enabled');
+    if (theme === 'night') {
+        optNight.classList.add('enabled');
+    }
+    else if (theme === 'day') {
+        optDay.classList.add('enabled');
+    }
+    else if (theme === 'midday') {
+        optMidday.classList.add('enabled');
     }
     else {
-        optLight.classList.add('enabled');
-    }
+        optMidnight.classList.add('enabled');
+    }    
     fontsize = start.fontsize;
     if (fontsize === 'large') {
         optLarge.classList.add('enabled');
@@ -43,25 +51,51 @@ chrome.storage.sync.get({
 });
 
 function setTheme() {
-    chrome.storage.sync.set({'theme': theme}, function(lightDark) {
+    chrome.storage.sync.set({'theme': theme}, function(daymiddaynightmidnight) {
         console.log(theme);
     });
 };
 
-function setDark() {
-    if (theme !== 'dark') {
-        theme = 'dark';
-        optLight.classList.remove('enabled');
-        optDark.classList.add('enabled');
+function setnight() {
+    if (theme !== 'night') {
+        theme = 'night';
+        optDay.classList.remove('enabled');
+        optMidday.classList.remove('enabled');
+        optMidnight.classList.remove('enabled');
+        optNight.classList.add('enabled');
         setTheme();
     }
 };
 
-function setLight() {
-    if (theme !== 'light') {
-        theme = 'light';
-        optDark.classList.remove('enabled');
-        optLight.classList.add('enabled');
+function setday() {
+    if (theme !== 'day') {
+        theme = 'day';
+        optMidday.classList.remove('enabled');
+        optNight.classList.remove('enabled');
+        optMidnight.classList.remove('enabled');
+        optDay.classList.add('enabled');
+        setTheme();
+    }
+};
+
+function setmidday() {
+    if (theme !== 'midday') {
+        theme = 'midday';
+        optDay.classList.remove('enabled');
+        optNight.classList.remove('enabled');
+        optMidnight.classList.remove('enabled');
+        optMidday.classList.add('enabled');
+        setTheme();
+    }
+};
+
+function setmidnight() {
+    if (theme !== 'midnight') {
+        theme = 'midnight';
+        optDay.classList.remove('enabled');
+        optMidday.classList.remove('enabled');
+        optNight.classList.remove('enabled');
+        optMidnight.classList.add('enabled');
         setTheme();
     }
 };
@@ -113,8 +147,10 @@ slide.onchange = function() {
     });
 };
 
-optDark.addEventListener('click', setDark);
-optLight.addEventListener('click', setLight);
+optDay.addEventListener('click', setday);
+optMidday.addEventListener('click', setmidday);
+optNight.addEventListener('click', setnight);
+optMidnight.addEventListener('click', setmidnight);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);
