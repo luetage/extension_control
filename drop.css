@@ -3,8 +3,8 @@
     src: url('fonts/Raleway-Medium.ttf') format('truetype');
 }
 @font-face {
-font-family: 'Raleway-SemiBold';
-src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
+    font-family: 'Raleway-SemiBold';
+    src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
 }
 
 body {

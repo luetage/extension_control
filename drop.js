@@ -1,6 +1,3 @@
-const switcher = document.getElementById('switcher');
-const thisID = chrome.runtime.id;
-
 function dark() {
     document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
     document.body.style.setProperty('--fg', 'hsl(207,5%,42%)');
@@ -99,74 +96,89 @@ function options() {
     chrome.runtime.openOptionsPage();
 };
 
-chrome.storage.sync.get({
-    'theme': '',
-    'width': '195',
-    'fontsize': 'medium',
-    'os': ''
-}, function(start) {
-    const width = start.width;
-    document.body.style.maxWidth = width + 'px';
-    const theme = start.theme;
-    if (theme === 'dark') {
-        dark();
-    }
-    else {
-        light();
-    }
-    const fontsize = start.fontsize;
-    if (fontsize === 'small') {
-        small();
-    }
-    else if (fontsize === 'medium') {
-        medium();
-    }
-    else {
-        large();
-    }
-    const os = start.os;
-    if (os === 'win') {
-        font();
-    }
-});
-
-chrome.management.getAll(function(info) {
-    console.log(info);
-    let extItem = {};
-    let extID = {};
-    let gut = {};
-    info.sort(function (a,b) {
-        return a.shortName.trim().localeCompare(b.shortName.trim());
-    });
-
-    for (i=0; i<info.length; i++) {
-        if (info[i].type === 'extension' && info[i].id !== thisID) {
-            extID = info[i].id;
-            extItem = document.createElement('div');
-            extItem.classList.add('extension');
-            if (info[i].updateUrl == null) {
-                gut = true;
-                extItem.classList.add('out');
-            }
-            if (info[i].installType === 'development') {
-                gut = true;
-                extItem.classList.remove('out');
-                extItem.classList.add('dev');
-            }
-            if (info[i].enabled === true) {
-                extItem.classList.add('enabled');
-            }
-            extItem.setAttribute('id', extID);
-            extItem.innerHTML = '<div>' + info[i].shortName + '</div>';
-            switcher.appendChild(extItem);
+function setup() {
+    chrome.storage.sync.get({
+        'theme': '',
+        'width': '195',
+        'fontsize': 'medium',
+        'os': ''
+    }, function(start) {
+        const width = start.width;
+        document.body.style.maxWidth = width + 'px';
+        const theme = start.theme;
+        if (theme === 'dark') {
+            dark();
         }
-    }
+        else {
+            light();
+        }
+        const fontsize = start.fontsize;
+        if (fontsize === 'small') {
+            small();
+        }
+        else if (fontsize === 'medium') {
+            medium();
+        }
+        else {
+            large();
+        }
+        const os = start.os;
+        if (os === 'win') {
+            font();
+        }
+    });
+};
 
+function load() {
+    chrome.management.getAll(function(info) {
+        console.log(info);
+        info.sort(function (a,b) {
+            return a.shortName.trim().localeCompare(b.shortName.trim());
+        });
+        chrome.storage.sync.get({'hidden': ''}, function(comp) {
+            hidden = comp.hidden;
+            const thisID = chrome.runtime.id;
+            var present = [];
+            for (i=0; i<info.length; i++) {
+                if (info[i].type === 'extension' && info[i].id !== thisID) {
+                    extID = info[i].id;
+                    present.push(extID);
+                    if (hidden.indexOf(info[i].id) === -1) {
+                        extItem = document.createElement('div');
+                        extItem.classList.add('extension');
+                        if (info[i].updateUrl == null) {
+                            gut = true;
+                            extItem.classList.add('out');
+                        }
+                        if (info[i].installType === 'development') {
+                            gut = true;
+                            extItem.classList.remove('out');
+                            extItem.classList.add('dev');
+                        }
+                        if (info[i].enabled === true) {
+                            extItem.classList.add('enabled');
+                        }
+                        extItem.setAttribute('id', extID);
+                        extItem.innerHTML = '<div>' + info[i].shortName + '</div>';
+                        switcher.appendChild(extItem);
+                    }
+                }
+            }
+            var remove = hidden.filter(e => !present.includes(e));
+            hidden = hidden.filter(function(e) {
+                return !remove.includes(e);
+            });
+            chrome.storage.sync.set({'hidden': hidden});
+            if (gut === true) {
+                gutter();
+            }
+            run();
+        });
+    });
+};
+
+function run() {
     const extensions = document.getElementsByClassName('extension');
-    if (gut === true) {
-        gutter();
-    }
-
     for (i=0; i<extensions.length; i++) {
         extensions[i].addEventListener('click', function(i) {
             rmMenu();
@@ -214,7 +226,7 @@ chrome.management.getAll(function(info) {
                         txtdiv.innerHTML = '<p><span class="desc">version </span>' + version + '</p><p id="home"><a class="desc" href="' + home + '" target="_blank" rel="noreferrer noopener">homepage</a></p><p><span class="desc">id </span><span id="copy">' + extID + '</span></p>';
                         extensions[i].insertAdjacentElement('afterend', txtdiv);
                         if (jmp === 1) {
-                            document.querySelector('#home').style.display = 'none';
+                            document.getElementById('home').style.display = 'none';
                         }
                         const cpID = document.getElementById('copy');cpID.addEventListener('click', function() {
                             navigator.clipboard.writeText(extID);
@@ -231,9 +243,13 @@ chrome.management.getAll(function(info) {
             hide.innerHTML = 'hide';
             menu.appendChild(hide);
             hide.addEventListener('click', function() {
-                chrome.storage.sync.get({'hidden': '{}'}, function() {
-                    rmMenu();
-                    extensions[i].style.display = 'none';
+                chrome.storage.sync.get({'hidden': ''}, function(arr) {
+                    hidden = arr.hidden;
+                    hidden.push(extID);
+                    chrome.storage.sync.set({'hidden': hidden}, function() {
+                        rmMenu();
+                        extensions[i].style.display = 'none';
+                    });
                 });
             });
 
@@ -272,7 +288,10 @@ chrome.management.getAll(function(info) {
             });
         }.bind(this, i));
     }
-});
+};
 
-switcher.addEventListener('mouseleave', rmMenu);
+hidden = [];
+setup();
+load();
+document.getElementById('switcher').addEventListener('mouseleave', rmMenu);
 document.getElementById('header').addEventListener('click', options);

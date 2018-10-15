@@ -76,7 +76,7 @@ h1 {
     font-size: 1.5rem;
     color: #666c71;
 }
-.high {
+.high, .extensions:hover {
     color: #93a3e1;
 }
 
@@ -91,7 +91,7 @@ h1 {
 .right {
     float: right;
 }
-#dark, #light, #small, #medium, #large {
+#dark, #light, #small, #medium, #large, .extensions {
     color: #666c71;
     cursor: pointer;
 }
