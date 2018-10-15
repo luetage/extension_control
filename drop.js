@@ -1,7 +1,53 @@
 const switcher = document.getElementById('switcher');
 const thisID = chrome.runtime.id;
 
-function dark() {
+function day() {
+    document.body.style.setProperty('--bg', 'hsl(0,0%,93%)');
+    document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
+    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
+    document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
+    document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
+    document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
+    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
+    document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
+    document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
+    document.body.style.setProperty('--extEn', 'hsl(228,57%,36%)');
+    document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
+    document.body.style.setProperty('--extEnHi', 'hsl(228,57%,36%)');
+    document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
+    document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
+    document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
+    document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
+    document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
+    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
+};
+
+function midday() {
+    document.body.style.setProperty('--bg', 'hsl(0,0%,93%)');
+    document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
+    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
+    document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
+    document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
+    document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
+    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
+    document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
+    document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
+    document.body.style.setProperty('--extEn', 'hsl(228,57%,36%)');
+    document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
+    document.body.style.setProperty('--extEnHi', 'hsl(228,57%,36%)');
+    document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
+    document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
+    document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
+    document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
+    document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
+    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
+};
+
+function night() {
     document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
     document.body.style.setProperty('--fg', 'hsl(207,5%,42%)');
     document.body.style.setProperty('--fgShadow', 'hsl(207,5%,32%)');
@@ -25,32 +71,33 @@ function dark() {
     document.body.style.setProperty('--desc', 'hsl(228,3%,66%)');
 };
 
-function light() {
-    document.body.style.setProperty('--bg', 'hsl(0,0%,93%)');
-    document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
-    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
-    document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
-    document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
-    document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
-    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
-    document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
-    document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
-    document.body.style.setProperty('--extEn', 'hsl(228,57%,36%)');
-    document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
-    document.body.style.setProperty('--extEnHi', 'hsl(228,57%,36%)');
-    document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
-    document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
-    document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
-    document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
+function midnight() {
+    document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
+    document.body.style.setProperty('--fg', 'hsl(207,5%,42%)');
+    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,32%)');
+    document.body.style.setProperty('--headerBg', 'hsl(240,3%,13%)');
+    document.body.style.setProperty('--headerHi', 'hsl(228,57%,73%)');
+    document.body.style.setProperty('--headerHiShadow', 'hsl(228, 57%, 58%)');
+    document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
+    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,51%)');
+    document.body.style.setProperty('--extBgHi', 'hsl(240,2%,19%)');
+    document.body.style.setProperty('--extFgHi', 'hsl(228,3%,66%)');
+    document.body.style.setProperty('--extFgHiShadow', 'hsl(228,3%,46%)');
+    document.body.style.setProperty('--extEn', 'hsl(228,57%,73%)');
+    document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,53%)');
+    document.body.style.setProperty('--extEnHi', 'hsl(228,57%,73%)');
+    document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,53%)');
+    document.body.style.setProperty('--menuBg', 'hsl(240,2%,19%)');
+    document.body.style.setProperty('--menuFgAct', 'hsl(210,2%,81%)');
+    document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
     document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
     document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--desc', 'hsl(228,3%,66%)');
 };
 
 function small() {
     document.body.style.setProperty('--top', '48px');
-    document.body.style.setProperty('--height', '525px');
+    document.body.style.setProperty('--height', '520px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall, .info, .hide {font-size: 11px}';
     document.body.appendChild(fontsize);
@@ -58,7 +105,7 @@ function small() {
 
 function medium() {
     document.body.style.setProperty('--top', '50px');
-    document.body.style.setProperty('--height','518px');
+    document.body.style.setProperty('--height','513px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall, .info, .hide {font-size: 12px}';
     document.body.appendChild(fontsize);
@@ -66,7 +113,7 @@ function medium() {
 
 function large() {
     document.body.style.setProperty('--top', '51px');
-    document.body.style.setProperty('--height', '537px');
+    document.body.style.setProperty('--height', '532px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall, .info, .hide {font-size: 13px}';
     document.body.appendChild(fontsize);
@@ -108,11 +155,17 @@ chrome.storage.sync.get({
     const width = start.width;
     document.body.style.maxWidth = width + 'px';
     const theme = start.theme;
-    if (theme === 'dark') {
-        dark();
+    if (theme === 'night') {
+        night();
+    }
+    else if (theme === 'day') {
+        day();
+    }
+    else if (theme === 'midday') {
+        midday();
     }
     else {
-        light();
+        midnight();
     }
     const fontsize = start.fontsize;
     if (fontsize === 'small') {
