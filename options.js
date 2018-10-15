@@ -1,7 +1,7 @@
-const optDay = document.getElementById('day');
-const optMidday = document.getElementById('midday');
-const optNight = document.getElementById('night');
-const optMidnight = document.getElementById('midnight');
+const optlight = document.getElementById('light');
+const optlighter = document.getElementById('lighter');
+const optdark = document.getElementById('dark');
+const optdarker = document.getElementById('darker');
 const optSmall = document.getElementById('small');
 const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
@@ -26,17 +26,17 @@ chrome.storage.sync.get({
     slide.value = width;
     disp.innerHTML = width + 'px';
     theme = start.theme;
-    if (theme === 'night') {
-        optNight.classList.add('enabled');
+    if (theme === 'dark') {
+        optdark.classList.add('enabled');
     }
-    else if (theme === 'day') {
-        optDay.classList.add('enabled');
+    else if (theme === 'light') {
+        optlight.classList.add('enabled');
     }
-    else if (theme === 'midday') {
-        optMidday.classList.add('enabled');
+    else if (theme === 'lighter') {
+        optlighter.classList.add('enabled');
     }
     else {
-        optMidnight.classList.add('enabled');
+        optdarker.classList.add('enabled');
     }    
     fontsize = start.fontsize;
     if (fontsize === 'large') {
@@ -51,51 +51,51 @@ chrome.storage.sync.get({
 });
 
 function setTheme() {
-    chrome.storage.sync.set({'theme': theme}, function(daymiddaynightmidnight) {
+    chrome.storage.sync.set({'theme': theme}, function(lightlighterdarkdarker) {
         console.log(theme);
     });
 };
 
-function setnight() {
-    if (theme !== 'night') {
-        theme = 'night';
-        optDay.classList.remove('enabled');
-        optMidday.classList.remove('enabled');
-        optMidnight.classList.remove('enabled');
-        optNight.classList.add('enabled');
+function setdark() {
+    if (theme !== 'dark') {
+        theme = 'dark';
+        optlight.classList.remove('enabled');
+        optlighter.classList.remove('enabled');
+        optdarker.classList.remove('enabled');
+        optdark.classList.add('enabled');
         setTheme();
     }
 };
 
-function setday() {
-    if (theme !== 'day') {
-        theme = 'day';
-        optMidday.classList.remove('enabled');
-        optNight.classList.remove('enabled');
-        optMidnight.classList.remove('enabled');
-        optDay.classList.add('enabled');
+function setlight() {
+    if (theme !== 'light') {
+        theme = 'light';
+        optlighter.classList.remove('enabled');
+        optdark.classList.remove('enabled');
+        optdarker.classList.remove('enabled');
+        optlight.classList.add('enabled');
         setTheme();
     }
 };
 
-function setmidday() {
-    if (theme !== 'midday') {
-        theme = 'midday';
-        optDay.classList.remove('enabled');
-        optNight.classList.remove('enabled');
-        optMidnight.classList.remove('enabled');
-        optMidday.classList.add('enabled');
+function setlighter() {
+    if (theme !== 'lighter') {
+        theme = 'lighter';
+        optlight.classList.remove('enabled');
+        optdark.classList.remove('enabled');
+        optdarker.classList.remove('enabled');
+        optlighter.classList.add('enabled');
         setTheme();
     }
 };
 
-function setmidnight() {
-    if (theme !== 'midnight') {
-        theme = 'midnight';
-        optDay.classList.remove('enabled');
-        optMidday.classList.remove('enabled');
-        optNight.classList.remove('enabled');
-        optMidnight.classList.add('enabled');
+function setdarker() {
+    if (theme !== 'darker') {
+        theme = 'darker';
+        optlight.classList.remove('enabled');
+        optlighter.classList.remove('enabled');
+        optdark.classList.remove('enabled');
+        optdarker.classList.add('enabled');
         setTheme();
     }
 };
@@ -147,10 +147,10 @@ slide.onchange = function() {
     });
 };
 
-optDay.addEventListener('click', setday);
-optMidday.addEventListener('click', setmidday);
-optNight.addEventListener('click', setnight);
-optMidnight.addEventListener('click', setmidnight);
+optlight.addEventListener('click', setlight);
+optlighter.addEventListener('click', setlighter);
+optdark.addEventListener('click', setdark);
+optdarker.addEventListener('click', setdarker);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);
