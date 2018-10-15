@@ -91,17 +91,17 @@ h1 {
 .right {
     float: right;
 }
-#dark, #light, #small, #medium, #large {
+#day, #midday, #night, #midnight, #small, #medium, #large {
     color: #666c71;
     cursor: pointer;
 }
-#light, #medium, #large {
-    margin-left: 40px
+#midday, #night, #midnight, #medium, #large {
+    margin-left: 30px
 }
-#dark:hover, #light:hover, #small:hover, #medium:hover, #large:hover {
+#day:hover, #midday:hover, #night:hover, #midnight:hover, #small:hover, #medium:hover, #large:hover {
     color: #a6a7ab;
 }
-#dark.enabled, #light.enabled, #small.enabled, #medium.enabled, #large.enabled, #display {
+#day.enabled, #midday.enabled, #night.enabled, #midnight.enabled, #small.enabled, #medium.enabled, #large.enabled, #display {
     color: #d5596f;
 }
 #display {
