@@ -22,7 +22,7 @@ function dark() {
     document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
     document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
     document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--desc', 'hsl(228,3%,66%)');
+    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
 };
 
 function light() {
@@ -202,10 +202,20 @@ chrome.management.getAll(function(info) {
                 else {
                     chrome.management.get(extID, function(text) {
                         var version = text.version;
+                        var home = text.homepageUrl;
+                        if (home !== '') {
+                            var jmp = 0;
+                        }
+                        else {
+                            var jmp = 1;
+                        }
                         var txtdiv = document.createElement('div');
                         txtdiv.id = 'txtdiv';
-                        txtdiv.innerHTML = '<p><span class="desc">version </span>' + version + '</p><span class="desc">id </span><span id="copy">' + extID + '</span></p>';
+                        txtdiv.innerHTML = '<p><span class="desc">version </span>' + version + '</p><p id="home"><a class="desc" href="' + home + '" target="_blank" rel="noreferrer noopener">homepage</a></p><p><span class="desc">id </span><span id="copy">' + extID + '</span></p>';
                         extensions[i].insertAdjacentElement('afterend', txtdiv);
+                        if (jmp === 1) {
+                            document.querySelector('#home').style.display = 'none';
+                        }
                         const cpID = document.getElementById('copy');cpID.addEventListener('click', function() {
                             navigator.clipboard.writeText(extID);
                             cpID.style.cursor = 'default';
@@ -215,18 +225,19 @@ chrome.management.getAll(function(info) {
                 }
             });
 
-            //hide
+            // hide
             var hide = document.createElement('span');
             hide.classList.add('hide');
             hide.innerHTML = 'hide';
             menu.appendChild(hide);
             hide.addEventListener('click', function() {
-
-                rmMenu();
-                extensions[i].style.display = 'none';
+                chrome.storage.sync.get({'hidden': '{}'}, function() {
+                    rmMenu();
+                    extensions[i].style.display = 'none';
+                });
             });
 
-            //options
+            // options
             var options = document.createElement('span');
             options.classList.add('options');
             options.innerHTML = 'options';
