@@ -4,20 +4,46 @@ function setTheme() {
     });
 };
 
-function setDark() {
+function setdark() {
     if (theme !== 'dark') {
         theme = 'dark';
-        optLight.classList.remove('enabled');
-        optDark.classList.add('enabled');
+        optlight.classList.remove('enabled');
+        optlighter.classList.remove('enabled');
+        optdarker.classList.remove('enabled');
+        optdark.classList.add('enabled');
         setTheme();
     }
 };
 
-function setLight() {
+function setlight() {
     if (theme !== 'light') {
         theme = 'light';
-        optDark.classList.remove('enabled');
-        optLight.classList.add('enabled');
+        optlighter.classList.remove('enabled');
+        optdark.classList.remove('enabled');
+        optdarker.classList.remove('enabled');
+        optlight.classList.add('enabled');
+        setTheme();
+    }
+};
+
+function setlighter() {
+    if (theme !== 'lighter') {
+        theme = 'lighter';
+        optlight.classList.remove('enabled');
+        optdark.classList.remove('enabled');
+        optdarker.classList.remove('enabled');
+        optlighter.classList.add('enabled');
+        setTheme();
+    }
+};
+
+function setdarker() {
+    if (theme !== 'darker') {
+        theme = 'darker';
+        optlight.classList.remove('enabled');
+        optlighter.classList.remove('enabled');
+        optdark.classList.remove('enabled');
+        optdarker.classList.add('enabled');
         setTheme();
     }
 };
@@ -143,8 +169,11 @@ slide.onchange = function() {
         disp.innerHTML = width + 'px';
     });
 };
-optDark.addEventListener('click', setDark);
-optLight.addEventListener('click', setLight);
+
+optlight.addEventListener('click', setlight);
+optlighter.addEventListener('click', setlighter);
+optdark.addEventListener('click', setdark);
+optdarker.addEventListener('click', setdarker);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);
