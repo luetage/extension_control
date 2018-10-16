@@ -67,8 +67,8 @@ function dark() {
     document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
     document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
     document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--desc', 'hsl(228,3%,66%)');
-    document.body.style.setProperty('--descShadow', 'hsl(228,3%,56%)');
+    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
+    document.body.style.setProperty('--descShadow', 'hsl(349, 60%, 69%)');
 };
 
 function darker() {

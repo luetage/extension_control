@@ -79,7 +79,9 @@ h1 {
 .high, .extensions:hover {
     color: #93a3e1;
 }
-
+.extensions {
+    cursor:pointer;
+}
 .float {
     white-space: nowrap;
     overflow: hidden;
