@@ -1,101 +1,3 @@
-function light() {
-    document.body.style.setProperty('--bg', 'hsl(0,0%,93%)');
-    document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
-    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,73%)');
-    document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
-    document.body.style.setProperty('--headerHi', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--headerHiShadow', 'hsl(349, 60%, 74%)');
-    document.body.style.setProperty('--headerFg', 'hsl(228,3%,60%)');
-    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
-    document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
-    document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
-    document.body.style.setProperty('--extEn', 'hsl(228,57%,36%)');
-    document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,57%)');
-    document.body.style.setProperty('--extEnHi', 'hsl(228,57%,36%)');
-    document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,57%)');
-    document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
-    document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
-    document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
-    document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
-    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--descShadow', 'hsl(349, 60%, 69%)');
-};
-
-function lighter() {
-    document.body.style.setProperty('--bg', 'hsl(0,0%,99%)');
-    document.body.style.setProperty('--fg', 'hsl(207,5%,58%)');
-    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,69%)');
-    document.body.style.setProperty('--headerBg', 'hsl(240,3%,94%)');
-    document.body.style.setProperty('--headerHi', 'hsl(0,0%,28%)');
-    document.body.style.setProperty('--headerHiShadow', 'hsl(0, 0%, 38%)');
-    document.body.style.setProperty('--headerFg', 'hsl(228,3%,69%)');
-    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,75%)');
-    document.body.style.setProperty('--extBgHi', 'hsl(240, 5%, 78%');
-    document.body.style.setProperty('--extFgHi', 'hsl(360, 100%, 100%)');
-    document.body.style.setProperty('--extEn', 'hsl(0,0%,28%)');
-    document.body.style.setProperty('--extEnShadow', 'hsl(0,0%,40%)');
-    document.body.style.setProperty('--extEnHi', 'hsl(0,0%,22%)');
-    document.body.style.setProperty('--extEnHiShadow', 'hsl(0,0%,35%)');
-    document.body.style.setProperty('--menuBg', 'hsl(240, 5%, 78%)');
-    document.body.style.setProperty('--menuFgAct', 'hsl(360, 100%, 100%)');
-    document.body.style.setProperty('--menuFgActHi', 'hsl(0, 0%, 94%)');
-    document.body.style.setProperty('--menuBgHi', 'hsl(240,5%,69%)');
-    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--desc', 'hsl(0,0%,28%)');
-    document.body.style.setProperty('--descShadow', 'hsl(0,0%,38%)');
-};
-
-function dark() {
-    document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
-    document.body.style.setProperty('--fg', 'hsl(207,5%,42%)');
-    document.body.style.setProperty('--fgShadow', 'hsl(207,5%,32%)');
-    document.body.style.setProperty('--headerBg', 'hsl(240,3%,13%)');
-    document.body.style.setProperty('--headerHi', 'hsl(228,57%,73%)');
-    document.body.style.setProperty('--headerHiShadow', 'hsl(228, 57%, 58%)');
-    document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
-    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,51%)');
-    document.body.style.setProperty('--extBgHi', 'hsl(240,2%,19%)');
-    document.body.style.setProperty('--extFgHi', 'hsl(228,3%,66%)');
-    document.body.style.setProperty('--extFgHiShadow', 'hsl(228,3%,46%)');
-    document.body.style.setProperty('--extEn', 'hsl(228,57%,73%)');
-    document.body.style.setProperty('--extEnShadow', 'hsl(228,57%,53%)');
-    document.body.style.setProperty('--extEnHi', 'hsl(228,57%,73%)');
-    document.body.style.setProperty('--extEnHiShadow', 'hsl(228,57%,53%)');
-    document.body.style.setProperty('--menuBg', 'hsl(240,2%,19%)');
-    document.body.style.setProperty('--menuFgAct', 'hsl(210,2%,81%)');
-    document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
-    document.body.style.setProperty('--menuBgHi', 'hsl(229, 59.8%, 59%)');
-    document.body.style.setProperty('--menuBgHi2', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--desc', 'hsl(349, 60%, 59%)');
-    document.body.style.setProperty('--descShadow', 'hsl(349, 60%, 69%)');
-};
-
-function darker() {
-    document.body.style.setProperty('--bg', 'hsl(0, 0%, 8%)');
-    document.body.style.setProperty('--fg', 'hsl(207,5%,38%)');
-    document.body.style.setProperty('--fgShadow', 'hsl(228,3%,38%)');
-    document.body.style.setProperty('--headerBg', 'hsl(0, 0%, 6%)');
-    document.body.style.setProperty('--headerHi', 'hsl(357, 55%, 52%)');
-    document.body.style.setProperty('--headerHiShadow', 'hsl(357, 55%, 42%)');
-    document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
-    document.body.style.setProperty('--headerFgShadow', 'hsl(228,3%,51%)');
-    document.body.style.setProperty('--extBgHi', 'hsl(0, 0%, 5%)');
-    document.body.style.setProperty('--extFgHi', 'hsl(228,3%,66%)');
-    document.body.style.setProperty('--extFgHiShadow', 'hsl(228,3%,46%)');
-    document.body.style.setProperty('--extEn', 'hsl(357, 55%, 52%)');
-    document.body.style.setProperty('--extEnShadow', 'hsl(357, 55%, 22%)');
-    document.body.style.setProperty('--extEnHi', 'hsl(357,55%,52%)');
-    document.body.style.setProperty('--extEnHiShadow', 'hsl(357,55%,42%)');
-    document.body.style.setProperty('--menuBg', 'hsl(0, 0%, 3%)');
-    document.body.style.setProperty('--menuFgAct', 'hsl(210,2%,81%)');
-    document.body.style.setProperty('--menuFgActHi', 'hsl(210,2%,95%)');
-    document.body.style.setProperty('--menuBgHi', 'hsl(0, 0%, 15%)');
-    document.body.style.setProperty('--menuBgHi2', 'hsl(357, 55%, 52%)');
-    document.body.style.setProperty('--desc', 'hsl(228,3%,66%)');
-    document.body.style.setProperty('--descShadow', 'hsl(228,3%,56%)');
-};
-
 function small() {
     document.body.style.setProperty('--top', '48px');
     document.body.style.setProperty('--height', '520px');
@@ -128,7 +30,7 @@ function gutter() {
 
 function font() {
     var styleWin = document.createElement('style');
-    styleWin.innerHTML = 'body {text-shadow: var(--fgShadow) 0 0 1px;} #header{text-shadow: var(--headerFgShadow) 0 0 1px;} #contrast{text-shadow: var(--headerHiShadow) 0 0 1px;} .extension:hover{text-shadow: var(--extFgHiShadow) 0 0 1px;} .extension.enabled {text-shadow: var(--extEnShadow) 0 0 1px;} .extension.enabled:hover {text-shadow: var(--extEnHiShadow) 0 0 1px;} .desc {text-shadow: var(--descShadow) 0 0 1px;}';
+    styleWin.innerHTML = 'body {text-shadow: var(--fgShadow) 0 0 1px;} #header{text-shadow: var(--headerFgShadow) 0 0 1px;} #contrast{text-shadow: var(--headerHiShadow) 0 0 1px;} .extension:hover{text-shadow: var(--extFgHiShadow) 0 0 1px;} .extension.enabled {text-shadow: var(--extEnShadow) 0 0 1px;} .extension.enabled:hover {text-shadow: var(--extEnHiShadow) 0 0 1px;}';
     document.body.appendChild(styleWin);
 };
 
@@ -149,26 +51,12 @@ function options() {
 
 function setup() {
     chrome.storage.sync.get({
-        'theme': '',
         'width': '195',
         'fontsize': 'medium',
         'os': ''
     }, function(start) {
         const width = start.width;
         document.body.style.maxWidth = width + 'px';
-        const theme = start.theme;
-        if (theme === 'dark') {
-            dark();
-        }
-        else if (theme === 'lighter') {
-            lighter();
-        }
-        else if (theme === 'darker'){
-            darker();
-        }
-        else {
-            light();
-        }
         const fontsize = start.fontsize;
         if (fontsize === 'small') {
             small();
@@ -192,7 +80,7 @@ function load() {
         info.sort(function (a,b) {
             return a.shortName.trim().localeCompare(b.shortName.trim());
         });
-        chrome.storage.sync.get({'hidden': ''}, function(comp) {
+        chrome.storage.sync.get({'hidden': []}, function(comp) {
             hidden = comp.hidden;
             const thisID = chrome.runtime.id;
             var present = [];

@@ -45,7 +45,7 @@ body {
     z-index: 10;
 }
 #header {
-      font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 1.2rem;
     top: 0;
     padding: .7rem;
@@ -93,17 +93,17 @@ h1 {
 .right {
     float: right;
 }
-#light, #lighter, #dark, #darker, #small, #medium, #large {
+#light, #alt, #dark, #alt2, #small, #medium, #large {
     color: #666c71;
     cursor: pointer;
 }
-#lighter, #dark, #darker, #medium, #large {
+#alt, #dark, #alt2, #medium, #large {
     margin-left: 30px
 }
-#light:hover, #lighter:hover, #dark:hover, #darker:hover, #small:hover, #medium:hover, #large:hover {
+#light:hover, #alt:hover, #dark:hover, #alt2:hover, #small:hover, #medium:hover, #large:hover {
     color: #a6a7ab;
 }
-#light.enabled, #lighter.enabled, #dark.enabled, #darker.enabled, #small.enabled, #medium.enabled, #large.enabled, #display {
+#light.enabled, #alt.enabled, #dark.enabled, #alt2.enabled, #small.enabled, #medium.enabled, #large.enabled, #display {
     color: #d5596f;
 }
 #display {
