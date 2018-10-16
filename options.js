@@ -195,7 +195,7 @@ document.getElementById('extPage').addEventListener('click', function() {
 });
 chrome.runtime.onMessage.addListener(function(message) {
     if (message === 'hide extension') {
-        chrome.storage.sync.get({'hidden': ''}, function(msg) {
+        chrome.storage.sync.get({'hidden': []}, function(msg) {
             hidden = msg.hidden;
             show.innerHTML = '';
             showEXT();
