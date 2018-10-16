@@ -160,6 +160,12 @@ function setup() {
         if (theme === 'dark') {
             dark();
         }
+        else if (theme === 'lighter') {
+            lighter();
+        }
+        else if (theme === 'darker'){
+            darker();
+        }
         else {
             light();
         }
@@ -247,7 +253,7 @@ function run() {
         extensions[i].addEventListener('contextmenu', function(i) {
             event.preventDefault();
             rmMenu();
-•            extID = extensions[i].getAttribute('id');
+            extID = extensions[i].getAttribute('id');
             menu = document.createElement('div');
             menu.id = 'menu';
             extensions[i].insertAdjacentElement('afterend', menu);

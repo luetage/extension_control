@@ -7,10 +7,10 @@ function setTheme() {
 function setdark() {
     if (theme !== 'dark') {
         theme = 'dark';
-        optlight.classList.remove('enabled');
-        optlighter.classList.remove('enabled');
-        optdarker.classList.remove('enabled');
-        optdark.classList.add('enabled');
+        optLight.classList.remove('enabled');
+        optLighter.classList.remove('enabled');
+        optDarker.classList.remove('enabled');
+        optDark.classList.add('enabled');
         setTheme();
     }
 };
@@ -18,10 +18,10 @@ function setdark() {
 function setlight() {
     if (theme !== 'light') {
         theme = 'light';
-        optlighter.classList.remove('enabled');
-        optdark.classList.remove('enabled');
-        optdarker.classList.remove('enabled');
-        optlight.classList.add('enabled');
+        optLighter.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optDarker.classList.remove('enabled');
+        optLight.classList.add('enabled');
         setTheme();
     }
 };
@@ -29,10 +29,10 @@ function setlight() {
 function setlighter() {
     if (theme !== 'lighter') {
         theme = 'lighter';
-        optlight.classList.remove('enabled');
-        optdark.classList.remove('enabled');
-        optdarker.classList.remove('enabled');
-        optlighter.classList.add('enabled');
+        optLight.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optDarker.classList.remove('enabled');
+        optLighter.classList.add('enabled');
         setTheme();
     }
 };
@@ -40,10 +40,10 @@ function setlighter() {
 function setdarker() {
     if (theme !== 'darker') {
         theme = 'darker';
-        optlight.classList.remove('enabled');
-        optlighter.classList.remove('enabled');
-        optdark.classList.remove('enabled');
-        optdarker.classList.add('enabled');
+        optLight.classList.remove('enabled');
+        optLighter.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optDarker.classList.add('enabled');
         setTheme();
     }
 };
@@ -148,7 +148,9 @@ function setup() {
 };
 
 const optDark = document.getElementById('dark');
+const optDarker = document.getElementById('darker');
 const optLight = document.getElementById('light');
+const optLighter = document.getElementById('lighter');
 const optSmall = document.getElementById('small');
 const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
@@ -170,10 +172,10 @@ slide.onchange = function() {
     });
 };
 
-optlight.addEventListener('click', setlight);
-optlighter.addEventListener('click', setlighter);
-optdark.addEventListener('click', setdark);
-optdarker.addEventListener('click', setdarker);
+optLight.addEventListener('click', setlight);
+optLighter.addEventListener('click', setlighter);
+optDark.addEventListener('click', setdark);
+optDarker.addEventListener('click', setdarker);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);
