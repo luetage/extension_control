@@ -1,27 +1,14 @@
 function setTheme() {
     chrome.storage.sync.set({'theme': theme}, function() {
-        var popup = {};
-        if (optLight.classList.contains('enabled')) {
-            popup = 'theme_light.html';
-        }
-        else if (optDark.classList.contains('enabled')) {
-            popup = 'theme_dark.html';
-        }
-        else if (optAlt.classList.contains('enabled')) {
-            popup = 'theme_alt.html';
-        }
-        else {
-            popup = 'theme_alt2.html';
-        }
-        chrome.browserAction.setPopup({popup}, function() {
-            console.log(theme);
-        });
+        chrome.browserAction.setPopup({popup});
+        console.log(theme);
     });
 };
 
 function setLight() {
     if (theme !== 'light') {
         theme = 'light';
+        popup = 'theme_light.html'
         optLight.classList.add('enabled');
         optDark.classList.remove('enabled');
         optAlt.classList.remove('enabled');
@@ -33,6 +20,7 @@ function setLight() {
 function setDark() {
     if (theme !== 'dark') {
         theme = 'dark';
+        popup = 'theme_dark.html'
         optLight.classList.remove('enabled');
         optDark.classList.add('enabled');
         optAlt.classList.remove('enabled');
@@ -44,6 +32,7 @@ function setDark() {
 function setAlt() {
     if (theme !== 'alt') {
         theme = 'alt';
+        popup = 'theme_alt.html';
         optLight.classList.remove('enabled');
         optDark.classList.remove('enabled');
         optAlt.classList.add('enabled');
@@ -55,6 +44,7 @@ function setAlt() {
 function setAlt2() {
     if (theme !== 'alt2') {
         theme = 'alt2';
+        popup = 'theme_alt2.html';
         optLight.classList.remove('enabled');
         optDark.classList.remove('enabled');
         optAlt.classList.remove('enabled');
@@ -180,6 +170,7 @@ const disp = document.getElementById('display');
 const show = document.getElementById('show');
 width = {};
 theme = {};
+popup = {};
 fontsize = {};
 hidden = [];
 setup();
