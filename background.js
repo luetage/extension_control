@@ -1,6 +1,14 @@
 chrome.runtime.onInstalled.addListener(function(details) {
-    if (details.reason == "install" || details.reason == "update") {
+    if (details.reason == "install") {
         userAgent();
+    }
+    if (details.reason == "update") {
+        chrome.storage.sync.get({'os': ''}, function(getIt) {
+            var os = getIt.os;
+            if (os === '') {
+                userAgent();
+            }
+        });
     }
 });
 
@@ -21,42 +29,43 @@ chrome.runtime.onMessage.addListener(function(message) {
     }
 });
 
+chrome.runtime.onMessage.addListener(function(message) {
+    if (message === 'extension hidden') {
+        chrome.runtime.sendMessage('hide extension');
+    }
+});
+
 function userAgent() {
-    chrome.storage.sync.get({'os': ''}, function(getIt) {
-        let os = {};
-        let browser = {};
-        let theme = {};
-        os = getIt.os;
-        if (os === '') {
-            console.log('SETUP');
-            const agent = navigator.userAgent;
-            if (agent.includes('Windows') === true) {
-                os = 'win';
-            }
-            else {
-                os = 'other';
-            }
-            if (agent.includes('Vivaldi') === true) {
-                browser = 'viv';
-                theme = 'dark';
-            }
-            else if (agent.includes('OPR') === true) {
-                browser = 'opr';
-                theme = 'dark';
-            }
-            else {
-                browser = 'chr';
-                theme = 'light';
-            }
-            chrome.storage.sync.set({
-                'os': os,
-                'browser': browser,
-                'theme': theme
-            }, function(setIt) {
-                console.log(agent);
-                console.log(os + ' ' + browser + ' ' + theme);
-                chrome.runtime.openOptionsPage();
-            });
-        }
+    let os = {};
+    let browser = {};
+    let theme = {};
+    console.log('SETUP');
+    const agent = navigator.userAgent;
+    if (agent.includes('Windows') === true) {
+        os = 'win';
+    }
+    else {
+        os = 'other';
+    }
+    if (agent.includes('Vivaldi') === true) {
+        browser = 'viv';
+        theme = 'dark';
+    }
+    else if (agent.includes('OPR') === true) {
+        browser = 'opr';
+        theme = 'dark';
+    }
+    else {
+        browser = 'chr';
+        theme = 'light';
+    }
+    chrome.storage.sync.set({
+        'os': os,
+        'browser': browser,
+        'theme': theme
+    }, function() {
+        console.log(agent);
+        console.log(os + ' ' + browser + ' ' + theme);
+        chrome.runtime.openOptionsPage();
     });
 };

@@ -76,7 +76,7 @@ h1 {
     font-size: 1.5rem;
     color: #666c71;
 }
-.high {
+.high, .extensions:hover {
     color: #93a3e1;
 }
 

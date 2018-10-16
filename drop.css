@@ -1,178 +1,183 @@
 @font-face {
     font-family: 'Raleway-Medium';
     src: url('fonts/Raleway-Medium.ttf') format('truetype');
-  }
-  @font-face {
+}
+@font-face {
     font-family: 'Raleway-SemiBold';
     src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
-  }
+}
+
+body {
+    display: block;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 500;
+    letter-spacing: .5px;
+    min-width: 170px;
+    min-height: 200px;
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    cursor: default;
+    user-select: none;
+}
+
+
+/* Header */
+
+#header {
+    position: fixed;
+    top: 0;
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    padding: 16px 15px 11px;
+    width: 100%;
+    background-color: var(--headerBg);
+    color: var(--headerFg);
+    cursor: pointer;
+    z-index: 10;
+}
+.contrast {
+    color: var(--headerHi);
+}
+
+
+/* Extensions */
+
+#switcher {
+    position: relative;
+    max-height: var(--height);
+    overflow-y: hidden;
+    margin-top: var(--top);
+    margin-bottom: 5px;
+}
+#switcher:hover {
+    overflow-y: overlay;
+}
+.extension {
+    padding: 5px 15px 5px 15px;
+    cursor: pointer;
+}
+.extension div {
+    border: 1px solid transparent;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.extension div::before {
+    position: absolute;
+    content: "";
+    text-align: center;
+    left: 1px;
+    width: 20px;
+}
+.extension:hover {
+    background-color: var(--extBgHi);
+    color: var(--extFgHi);
+}
+.extension.enabled, .extension.enabled:hover {
+    color: var(--extEn);
+}
+.extension.enabled:hover {
+    color: var(--extEnHi);
+}
+
+
+/* Menu */
+
+#menu {
+    padding: 5px 15px 5px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.info, .hide, .options, .uninstall {
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    width: 48%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 3px;
+    background-color: var(--menuBg);
+}
+.info {
+    float: left;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
+.hide {
+    float: right;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
+.options {
+    float: left;
+    clear: left;
+    margin-top: 5px;
+    color: var(--menuFgDis);
+    cursor: default;
+}
+.options.optActive {
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
+.info:hover, .hide:hover, .options.optActive:hover {
+    background-color: var(--menuBgHi);
+    color: var(--menuFgActHi) !important;
+}
+.uninstall {
+    float: right;
+    clear: right;
+    margin-top: 5px;
+    color: var(--menuFgAct);
+    cursor: pointer;
+}
+.uninstall:hover {
+    background-color: var(--menuBgHi2);
+    color: var(--menuFgActHi) !important;
+}
+
+
+/* Info */
+
+#txtdiv {
+    padding: 0 15px 0 15px;
+    border: 1px solid transparent;
+    white-space: normal;
+    word-break: break-all;
+    margin-top: 0px;
+}
+#txtdiv p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-bottom: 4px;
+}
+#txtdiv p:last-of-type {
+    margin-bottom: 0px;
+}
+#txtdiv a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.desc {
+    color: var(--desc);
+}
+#copy {
+    cursor: pointer;
+}
+
+
+/* Scrollbar */
  
-  body {
-      display: block;
-      font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
-      font-weight: 500;
-      letter-spacing: .5px;
-      min-width: 170px;
-      min-height: 200px;
-      background: var(--bg);
-      color: var(--fg);
-      margin: 0;
-      cursor: default;
-      user-select: none;
-  }
+::-webkit-scrollbar {width: 8px}
  
- 
-  /* Header */
- 
-  #header {
-      position: fixed;
-      top: 0;
-      font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-      font-weight: 600;
-      text-align: left;
-      padding: 16px 15px 11px;
-      width: 100%;
-      background-color: var(--headerBg);
-      color: var(--headerFg);
-      cursor: pointer;
-      z-index: 10;
-  }
-  .contrast {
-      color: var(--headerHi);
-  }
- 
- 
-  /* Extensions */
- 
-  #switcher {
-      position: relative;
-      max-height: var(--height);
-      overflow-y: hidden;
-      margin-top: var(--top);
-      margin-bottom: 5px;
-  }
-  #switcher:hover {
-      overflow-y: overlay;
-  }
-  .extension {
-      padding: 5px 15px 5px 15px;
-      cursor: pointer;
-  }
-  .extension div {
-      border: 1px solid transparent;
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }
-  .extension div::before {
-      position: absolute;
-      content: "";
-      text-align: center;
-      left: 1px;
-      width: 20px;
-  }
-  .extension:hover {
-      background-color: var(--extBgHi);
-      color: var(--extFgHi);
-  }
-  .extension.enabled, .extension.enabled:hover {
-      color: var(--extEn);
-  }
-  .extension.enabled:hover {
-      color: var(--extEnHi);
-  }
- 
- 
-  /* Menu */
- 
-  #menu {
-      padding: 5px 15px 5px 15px;
-      white-space: nowrap;
-      overflow: hidden;
-  }
-  .info, .hide, .options, .uninstall {
-      font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-      font-weight: 600;
-      width: 48%;
-      text-align: center;
-      padding: 8px 0;
-      border-radius: 3px;
-      background-color: var(--menuBg);
-  }
-  .info {
-      float: left;
-      color: var(--menuFgAct);
-      cursor: pointer;
-  }
-  .hide {
-      float: right;
-      color: var(--menuFgAct);
-      cursor: pointer;
-  }
-  .options {
-      float: left;
-      clear: left;
-      margin-top: 5px;
-      color: var(--menuFgDis);
-      cursor: default;
-  }
-  .options.optActive {
-      color: var(--menuFgAct);
-      cursor: pointer;
-  }
-  .info:hover, .hide:hover, .options.optActive:hover {
-      background-color: var(--menuBgHi);
-      color: var(--menuFgActHi) !important;
-  }
-  .uninstall {
-      float: right;
-      clear: right;
-      margin-top: 5px;
-      color: var(--menuFgAct);
-      cursor: pointer;
-  }
-  .uninstall:hover {
-      background-color: var(--menuBgHi2);
-      color: var(--menuFgActHi) !important;
-  }
- 
- 
-  /* Info */
- 
-  #txtdiv {
-      padding: 0 15px 0 15px;
-      border: 1px solid transparent;
-      white-space: normal;
-      word-break: break-all;
-      margin-top: 0px;
-  }
-  #txtdiv p {
-      margin-block-start: 0px;
-      margin-block-end: 0px;
-  }
-  #txtdiv p:first-of-type {
-      margin-bottom: 4px;
-  }
-  .desc {
-      color: var(--desc)
-  }
-  #copy {
-      cursor: pointer;
-  }
- 
- 
-  /* Scrollbar */
- 
-  ::-webkit-scrollbar {width: 8px}
- 
-  ::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 15px rgba(0,0,0,.2);
-      border-right: solid 3px transparent;
-      border-radius: 2px 4px 4px 2px
-  }
-  ::-webkit-scrollbar-thumb {
-      box-shadow: inset 0 0 15px var(--headerHi);
-      border-right: solid 3px transparent;
-      border-radius: 2px 4px 4px 2px;
-  }
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px rgba(0,0,0,.2);
+    border-right: solid 3px transparent;
+    border-radius: 2px 4px 4px 2px
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 15px var(--headerHi);
+    border-right: solid 3px transparent;
+    border-radius: 2px 4px 4px 2px;
+}
