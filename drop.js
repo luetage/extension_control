@@ -249,6 +249,7 @@ function run() {
                     chrome.storage.sync.set({'hidden': hidden}, function() {
                         rmMenu();
                         extensions[i].style.display = 'none';
+                        chrome.runtime.sendMessage('extension hidden');
                     });
                 });
             });

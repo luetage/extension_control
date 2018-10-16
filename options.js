@@ -59,7 +59,6 @@ function setLarge() {
 };
 
 function showEXT() {
-    const show = document.getElementById('show');
     for (i=0; i<hidden.length; i++) {
         extID = hidden[i];
         chrome.management.get(extID, function(text) {
@@ -129,6 +128,7 @@ const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
 const slide = document.getElementById('maxwidth');
 const disp = document.getElementById('display');
+const show = document.getElementById('show');
 width = {};
 theme = {};
 fontsize = {};
@@ -150,4 +150,13 @@ optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);
 document.getElementById('extPage').addEventListener('click', function() {
     chrome.runtime.sendMessage('extensions pls');
+});
+chrome.runtime.onMessage.addListener(function(message) {
+    if (message === 'hide extension') {
+        chrome.storage.sync.get({'hidden': ''}, function(msg) {
+            hidden = msg.hidden;
+            show.innerHTML = '';
+            showEXT();
+        });
+    }
 });

@@ -29,6 +29,12 @@ chrome.runtime.onMessage.addListener(function(message) {
     }
 });
 
+chrome.runtime.onMessage.addListener(function(message) {
+    if (message === 'extension hidden') {
+        chrome.runtime.sendMessage('hide extension');
+    }
+});
+
 function userAgent() {
     let os = {};
     let browser = {};
