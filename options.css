@@ -20,6 +20,7 @@ body {
     letter-spacing: .5px;
     cursor: default;
     user-select: none;
+    overflow-x: hidden;
 }
 #header, #footer {
     position: fixed;
@@ -45,14 +46,14 @@ body {
 }
 #content {
     position: absolute;
-    width: 50vw;
+    width: 1000px;
     border-radius: 1px;
     line-height: 1.5;
     color: hsl(228, 3%, 66%);
     top: 20vh;
-    bottom: 20vh;
     left: 0;
     right: 0;
+    padding-bottom: 20px;
     margin: auto;
     text-align: left;
 }
@@ -64,16 +65,21 @@ body {
 
 .column {
     float: left;
-    width: 50%;
-    padding: 0 30px;
+    width: 55%;
+    padding: 0 40px;
 }
-.subcolumn {
+.column-right {
+    float: left;
+    width: 45%;
+    padding: 0 40px;
+}
+.sub-column {
     width: 100%;
     max-height: 48vh;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.subcolumn:hover {
+.sub-column:hover {
     width: 100%;
     overflow-y: overlay;
 }
@@ -88,15 +94,15 @@ body {
 
 /* Stacks columns on top of each other for smaller displays */
 
-@media screen and (max-width: 1000px) {
-    .column {
+@media screen and (max-width: 950px) {
+    .column, .right {
         width: 100%;
     }
 }
 
 .float {
     white-space: nowrap;
-    overflow: hidden;
+    overflow: auto;
     margin-bottom: 15px;
 }
 .left {
@@ -104,8 +110,8 @@ body {
 }
 .right {
     float: right;
+    left: -100px
 }
-
 #extPage {
     cursor: pointer;
 }
