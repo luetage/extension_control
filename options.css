@@ -46,12 +46,11 @@ body {
 #content {
     position: absolute;
     width: 900px;
-    height: 450px;
     border-radius: 1px;
     line-height: 1.5;
     color: hsl(228, 3%, 66%);
-    top: 0;
-    bottom: 15vh;
+    top: 20vh;
+    bottom: 20vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -70,14 +69,13 @@ body {
 }
 .subcolumn {
     width: 100%;
-    max-height: 400px;
+    max-height: 36vh;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .subcolumn:hover {
     width: 100%;
-    max-height: 400px;
-    overflow-y: auto;
+    overflow-y: overlay;
 }
 
 /* Clears floats after the columns */
@@ -201,7 +199,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-slider-thumb:active {
     -webkit-appearance: none !important;
-    border: 1px solid hsl(228, 57%, 73%);
+    border: 1px solid hsl(357, 55%, 52%);
     background: linear-gradient(90deg,#1c1c1c 0%, #454545 90%);
     background: -webkit-linear-gradient(90deg,#1c1c1c 0%, #454545 90%);
 }
