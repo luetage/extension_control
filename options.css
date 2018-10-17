@@ -20,6 +20,7 @@ body {
     letter-spacing: .5px;
     cursor: default;
     user-select: none;
+    overflow-x: hidden;
 }
 #header, #footer {
     position: fixed;
@@ -45,14 +46,14 @@ body {
 }
 #content {
     position: absolute;
-    width: 50vw;
+    width: 1000px;
     border-radius: 1px;
     line-height: 1.5;
     color: hsl(228, 3%, 66%);
     top: 20vh;
-    bottom: 20vh;
     left: 0;
     right: 0;
+    padding-bottom: 45px;
     margin: auto;
     text-align: left;
 }
@@ -64,16 +65,21 @@ body {
 
 .column {
     float: left;
-    width: 50%;
-    padding: 0 30px;
+    width: 55%;
+    padding: 0 40px;
 }
-.subcolumn {
+.column-right {
+    float: left;
+    width: 45%;
+    padding: 0 40px;
+}
+.sub-column {
     width: 100%;
     max-height: 48vh;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.subcolumn:hover {
+.sub-column:hover {
     width: 100%;
     overflow-y: overlay;
 }
@@ -88,15 +94,15 @@ body {
 
 /* Stacks columns on top of each other for smaller displays */
 
-@media screen and (max-width: 1000px) {
-    .column {
+@media screen and (max-width: 950px) {
+    .column, .right {
         width: 100%;
     }
 }
 
 .float {
     white-space: nowrap;
-    overflow: hidden;
+    overflow: auto;
     margin-bottom: 15px;
 }
 .left {
@@ -104,8 +110,8 @@ body {
 }
 .right {
     float: right;
+    left: -100px
 }
-
 #extPage {
     cursor: pointer;
 }
@@ -120,9 +126,10 @@ h1 {
     font-size: 1.6rem;
     color: hsl(207, 5%, 42%);
 }
-span.h2 {
+.h2 {
     font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: .9rem;
+    font-weight: 600;
+    font-size: .8rem;
     color: hsl(228, 3%, 66%);
 }
 .norm {
@@ -157,6 +164,37 @@ span.h2 {
 a {
     color: hsl(357, 55%, 52%);
     text-decoration: none;
+}
+form {
+    display: inline;
+}
+button {
+    background: none;
+    border: none;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: hsl(357, 55%, 52%);
+    cursor: pointer;
+    padding: 1px;
+}
+button.foot {
+    font-size: 1rem;
+}
+button:after {
+    content: '';
+    display: block;
+    position: initial;
+    margin: auto;
+    margin-top: 3px;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width 1s ease, background-color 1s ease !important
+}
+button:hover:after {
+    width: 100%;
+    background: white;
 }
 p {
     margin: 10px 0 10px 0;
