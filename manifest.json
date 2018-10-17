@@ -27,7 +27,7 @@
             "24": "icons/icn24.png",
             "38": "icons/icn38.png"
         },
-          "default_popup": "drop.html",
+          "default_popup": "theme_dark.html",
           "default_title": "Extension Control"
     },
     "background": {

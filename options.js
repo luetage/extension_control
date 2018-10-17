@@ -1,55 +1,60 @@
 function setTheme() {
     chrome.storage.sync.set({'theme': theme}, function() {
+        chrome.browserAction.setPopup({popup});
         console.log(theme);
     });
 };
 
-function setdark() {
-    if (theme !== 'dark') {
-        theme = 'dark';
-        optlight.classList.remove('enabled');
-        optlighter.classList.remove('enabled');
-        optdarker.classList.remove('enabled');
-        optdark.classList.add('enabled');
-        setTheme();
-    }
-};
-
-function setlight() {
+function setLight() {
     if (theme !== 'light') {
         theme = 'light';
-        optlighter.classList.remove('enabled');
-        optdark.classList.remove('enabled');
-        optdarker.classList.remove('enabled');
-        optlight.classList.add('enabled');
+        popup = 'theme_light.html'
+        optLight.classList.add('enabled');
+        optDark.classList.remove('enabled');
+        optAlt.classList.remove('enabled');
+        optAlt2.classList.remove('enabled');
         setTheme();
     }
 };
 
-function setlighter() {
-    if (theme !== 'lighter') {
-        theme = 'lighter';
-        optlight.classList.remove('enabled');
-        optdark.classList.remove('enabled');
-        optdarker.classList.remove('enabled');
-        optlighter.classList.add('enabled');
+function setDark() {
+    if (theme !== 'dark') {
+        theme = 'dark';
+        popup = 'theme_dark.html'
+        optLight.classList.remove('enabled');
+        optDark.classList.add('enabled');
+        optAlt.classList.remove('enabled');
+        optAlt2.classList.remove('enabled');
         setTheme();
     }
 };
 
-function setdarker() {
-    if (theme !== 'darker') {
-        theme = 'darker';
-        optlight.classList.remove('enabled');
-        optlighter.classList.remove('enabled');
-        optdark.classList.remove('enabled');
-        optdarker.classList.add('enabled');
+function setAlt() {
+    if (theme !== 'alt') {
+        theme = 'alt';
+        popup = 'theme_alt.html';
+        optLight.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optAlt.classList.add('enabled');
+        optAlt2.classList.remove('enabled');
+        setTheme();
+    }
+};
+
+function setAlt2() {
+    if (theme !== 'alt2') {
+        theme = 'alt2';
+        popup = 'theme_alt2.html';
+        optLight.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optAlt.classList.remove('enabled');
+        optAlt2.classList.add('enabled');
         setTheme();
     }
 };
 
 function setFontsize() {
-    chrome.storage.sync.set({'fontsize': fontsize}, function(smallToLarge) {
+    chrome.storage.sync.set({'fontsize': fontsize}, function() {
         console.log(fontsize);
     });
 };
@@ -57,9 +62,9 @@ function setFontsize() {
 function setSmall() {
     if (fontsize !== 'small') {
         fontsize = 'small';
+        optSmall.classList.add('enabled');
         optMedium.classList.remove('enabled');
         optLarge.classList.remove('enabled');
-        optSmall.classList.add('enabled');
         setFontsize();
     }
 };
@@ -67,9 +72,9 @@ function setSmall() {
 function setMedium() {
     if (fontsize !== 'medium') {
         fontsize = 'medium';
+        optSmall.classList.remove('enabled');
         optMedium.classList.add('enabled');
         optLarge.classList.remove('enabled');
-        optSmall.classList.remove('enabled');
         setFontsize();
     }
 };
@@ -77,9 +82,9 @@ function setMedium() {
 function setLarge() {
     if (fontsize !== 'large') {
         fontsize = 'large';
+        optSmall.classList.remove('enabled');
         optMedium.classList.remove('enabled');
         optLarge.classList.add('enabled');
-        optSmall.classList.remove('enabled');
         setFontsize();
     }
 };
@@ -124,21 +129,27 @@ function setup() {
         slide.value = width;
         disp.innerHTML = width + 'px';
         theme = start.theme;
-        if (theme === 'dark') {
-            optDark.classList.add('enabled');
-        }
-        else {
+        if (theme === 'light') {
             optLight.classList.add('enabled');
         }
-        fontsize = start.fontsize;
-        if (fontsize === 'large') {
-            optLarge.classList.add('enabled');
+        else if (theme === 'alt') {
+            optAlt.classList.add('enabled');
         }
-        else if (fontsize === 'small') {
-            optSmall.classList.add('enabled');
+        else if (theme === 'alt2') {
+            optAlt2.classList.add('enabled');
         }
         else {
+            optDark.classList.add('enabled');
+        }
+        fontsize = start.fontsize;
+        if (fontsize === 'small') {
+            optSmall.classList.add('enabled');
+        }
+        else if (fontsize === 'medium') {
             optMedium.classList.add('enabled');
+        }
+        else {
+            optLarge.classList.add('enabled');
         }
         hidden = start.hidden;
         if (hidden !== '') {
@@ -147,8 +158,10 @@ function setup() {
     });
 };
 
-const optDark = document.getElementById('dark');
 const optLight = document.getElementById('light');
+const optDark = document.getElementById('dark');
+const optAlt = document.getElementById('alt');
+const optAlt2 = document.getElementById('alt2');
 const optSmall = document.getElementById('small');
 const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
@@ -157,6 +170,7 @@ const disp = document.getElementById('display');
 const show = document.getElementById('show');
 width = {};
 theme = {};
+popup = {};
 fontsize = {};
 hidden = [];
 setup();
@@ -169,11 +183,10 @@ slide.onchange = function() {
         disp.innerHTML = width + 'px';
     });
 };
-
-optlight.addEventListener('click', setlight);
-optlighter.addEventListener('click', setlighter);
-optdark.addEventListener('click', setdark);
-optdarker.addEventListener('click', setdarker);
+optLight.addEventListener('click', setLight);
+optDark.addEventListener('click', setDark);
+optAlt.addEventListener('click', setAlt);
+optAlt2.addEventListener('click', setAlt2);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);
@@ -181,8 +194,8 @@ document.getElementById('extPage').addEventListener('click', function() {
     chrome.runtime.sendMessage('extensions pls');
 });
 chrome.runtime.onMessage.addListener(function(message) {
-    if (message === 'hide extension') {
-        chrome.storage.sync.get({'hidden': ''}, function(msg) {
+    if (message === 'hide it!') {
+        chrome.storage.sync.get({'hidden': []}, function(msg) {
             hidden = msg.hidden;
             show.innerHTML = '';
             showEXT();
