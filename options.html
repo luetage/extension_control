@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Extension Control</title>
     <link rel="stylesheet" href="options.css" />
     <link rel="shortcut icon" type="image/png" href="icons/icn16.png">
 </head>
+
 <body>
     <div id="header">
         <span id="extPage"><span class="high">extension</span><span class="norm">control</span><span id="version"></span></span>
     </div>
     <div id="content">
-        <h1>Menu Settings</h1>
-        <div class="float">
-            <div class="left">
-                <span class="high">Set the maximum width</span>
+        <div class="row">
+            <div class="column">
+                <h1>Menu Settings</h1>
+                <div class="float">
+                    <div class="left">
+                        <span>Set the maximum width</span>
+                    </div>
+                    <div class="right">
+                        <input id="maxwidth" type="range" name="rangeInput" min="170" max="250" step="5"><span id="display"></span>
+                    </div>
+                </div>
+                <div class="float">
+                    <div class="left">
+                        <span>Choose a font size</span>
+                    </div>
+                    <div class="right">
+                        <span id="small">small</span><span id="medium">medium</span><span id="large">large</span>
+                    </div>
+                </div>
+                <div class="float">
+                    <div class="left">
+                        <span>Select a theme</span>
+                    </div>
+                    <div class="right">
+                        <span id="light">light</span><span id="alt">lighter</span><span id="dark">dark</span><span id="alt2">darker</span>
+                    </div>
+                    <br><br><br><h1>Hidden Extensions</h1>
+                    <div class="subcolumn">
+                        <div id="show" class="centre"></div>
+                    </div>
+                </div>
             </div>
-            <div class="right">
-                <input id="maxwidth" type="range" name="rangeInput" min="170" max="250" step="5"><span id="display"></span>
+            <div class="column">
+                <div class="right">
+                    <h1>Glossary</h1>
+                    <p><span class="contrast">Title Bar</span> can be used to access this page</p>
+                    <p><span class="contrast">Enable/Disable</span> enacted by selecting the extension</p>
+                    <p><span class="contrast">Info</span> shows version #, id can be copied to clipboard</p>
+                    <p><span class="contrast">Hide</span> extensions from displaying in the manager</p>
+                    <p><span class="contrast">Options</span> page or menu for extension</p>
+                    <p><span class="contrast">Uninstall</span> extension completely from your browser</p>
+                    <p><span class="contrast">[]</span> extension is not from chrome web store</p>
+                    <p><span class="contrast">$</span> an unpacked extension (development)</p>
+                </div>
             </div>
         </div>
-        <div class="float">
-            <div class="left">
-                <span class="high">Choose a font size</span>
-            </div>
-            <div class="right">
-                <span id="small">small</span><span id="medium">medium</span><span id="large">large</span>
-            </div>
-        </div>
-        <div class="float">
-            <div class="left">
-                <span class="high">Select a theme</span>
-            </div>
-            <div class="right">
-                <span id="light">light</span><span id="alt">lighter</span><span id="dark">dark</span><span id="alt2">darker</span>
-            </div>
-        </div>
-        <br><h1>Glossary</h1>
-        <div class="centre">
-            <p><span class="high">Title Bar</span> can be used to access this page</p>
-            <p><span class="high">Enable/Disable</span> enacted by selecting the extension</p>
-            <p><span class="high">Options/Uninstall</span> right click on extension's name</p>
-            <p><span class="high">[]</span> extension is not from chrome web store</p>
-            <p><span class="high">$</span> an unpacked extension (development)</p>
-        </div>
-        <br><h1>Hidden</h1>
-        <div id="show" class="centre"></div>
     </div>
     <div id="footer">
         <span>Originally made for the <a href="https://vivaldi.com/" target="_blank" rel="noreferrer noopener">Vivaldi</a> web browser</span>
     </div>
     <script src="options.js"></script>
 </body>
+
 </html>
