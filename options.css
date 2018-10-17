@@ -45,7 +45,7 @@ body {
 }
 #content {
     position: absolute;
-    width: 900px;
+    width: 50vw;
     border-radius: 1px;
     line-height: 1.5;
     color: hsl(228, 3%, 66%);
@@ -65,11 +65,11 @@ body {
 .column {
     float: left;
     width: 50%;
-    padding: 0px;
+    padding: 0 30px;
 }
 .subcolumn {
     width: 100%;
-    max-height: 36vh;
+    max-height: 48vh;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -88,7 +88,7 @@ body {
 
 /* Stacks columns on top of each other for smaller displays */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .column {
         width: 100%;
     }
