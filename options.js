@@ -89,6 +89,13 @@ function setLarge() {
     }
 };
 
+function empty() {
+    var empty = document.createElement('p');
+    empty.classList.add('contrast');
+    empty.innerHTML = 'empty';
+    show.appendChild(empty);
+}
+
 function showEXT() {
     for (i=0; i<hidden.length; i++) {
         extID = hidden[i];
@@ -99,7 +106,7 @@ function showEXT() {
             extItem.innerHTML = name;
             extItem.id = divID;
             extItem.classList.add('extensions');
-            show.appendChild(extItem);
+            show.insertBefore(extItem, show.firstChild);
             extItem.addEventListener('click', function() {
                 var remove = hidden.indexOf(divID);
                 if (remove > -1) {
@@ -107,6 +114,9 @@ function showEXT() {
                 }
                 chrome.storage.sync.set({'hidden': hidden});
                 extItem.outerHTML = '';
+                if (!hidden.length > 0) {
+                    empty();
+                }
             })
         })
     }
@@ -123,7 +133,7 @@ function setup() {
         'theme': '',
         'width': '195',
         'fontsize': 'medium',
-        'hidden': ''
+        'hidden': []
     }, function(start) {
         width = start.width;
         slide.value = width;
@@ -152,8 +162,11 @@ function setup() {
             optLarge.classList.add('enabled');
         }
         hidden = start.hidden;
-        if (hidden !== '') {
+        if (hidden.length > 0) {
             showEXT();
+        }
+        else {
+            empty();
         }
     });
 };
