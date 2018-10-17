@@ -1,3 +1,14 @@
+os = {};
+browser = {};
+popup = {};
+
+chrome.runtime.onStartup.addListener(function() {
+    chrome.storage.sync.get({'popup': ''}, function(startup) {
+        popup = startup.popup;
+        chrome.browserAction.setPopup({popup});
+    });
+});
+
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == 'install') {
         userAgent();
@@ -30,10 +41,6 @@ chrome.runtime.onMessage.addListener(function(message) {
 });
 
 function userAgent() {
-    let os = {};
-    let browser = {};
-    let theme = {};
-    let popup = {};
     console.log('SETUP');
     const agent = navigator.userAgent;
     if (agent.includes('Windows') === true) {
@@ -44,27 +51,24 @@ function userAgent() {
     }
     if (agent.includes('Vivaldi') === true) {
         browser = 'viv';
-        theme = 'dark';
         popup = 'theme_dark.html';
     }
     else if (agent.includes('OPR') === true) {
         browser = 'opr';
-        theme = 'dark';
         popup = 'theme_dark.html';
     }
     else {
         browser = 'chr';
-        theme = 'light';
         popup = 'theme_light.html';
     }
     chrome.storage.sync.set({
         'os': os,
         'browser': browser,
-        'theme': theme
+        'popup': popup
     }, function() {
         chrome.browserAction.setPopup({popup});
         console.log(agent);
-        console.log(os + ' ' + browser + ' ' + theme);
+        console.log(os + ' ' + browser + ' ' + popup);
         chrome.runtime.openOptionsPage();
     });
 };
