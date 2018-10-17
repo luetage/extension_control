@@ -118,7 +118,7 @@ h1 {
     letter-spacing: .5px;
     text-align: left;
     font-size: 1.6rem;
-    color: hsl(207, 5%, 42%);  
+    color: hsl(207, 5%, 42%);
 }
 span.h2 {
     font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
@@ -139,7 +139,7 @@ span.h2 {
     color: hsl(207, 5%, 42%);
     cursor: pointer;
 }
-#alt, #dark, #alt2, #medium, #large {
+#light, #dark, #alt2, #medium, #large {
     margin-left: 20px;
 }
 #light:hover, #alt:hover, #dark:hover, #alt2:hover, #small:hover, #medium:hover, #large:hover {

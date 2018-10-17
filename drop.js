@@ -83,6 +83,7 @@ function load() {
         chrome.storage.sync.get({'hidden': []}, function(comp) {
             hidden = comp.hidden;
             const thisID = chrome.runtime.id;
+            var gut = {};
             var present = [];
             for (i=0; i<info.length; i++) {
                 if (info[i].type === 'extension' && info[i].id !== thisID) {
@@ -110,9 +111,7 @@ function load() {
                 }
             }
             var remove = hidden.filter(e => !present.includes(e));
-            hidden = hidden.filter(function(e) {
-                return !remove.includes(e);
-            });
+            hidden = hidden.filter(e => !remove.includes(e));
             chrome.storage.sync.set({'hidden': hidden});
             if (gut === true) {
                 gutter();
