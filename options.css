@@ -131,7 +131,7 @@ body {
 }
 #extPage:hover:after {
     width: 200px;
-    background: white;
+    background: hsl(228, 3%, 66%);
 }
 h1 {
     margin-top: 0;
@@ -209,7 +209,7 @@ button:after {
 }
 button:hover:after {
     width: 100%;
-    background: white;
+    background: hsl(228, 3%, 66%);
 }
 p {
     margin: 10px 0 10px 0;
