@@ -1,13 +1,12 @@
 function setTheme() {
-    chrome.storage.sync.set({'theme': theme}, function() {
+    chrome.storage.sync.set({'popup': popup}, function() {
         chrome.browserAction.setPopup({popup});
-        console.log(theme);
+        console.log(popup);
     });
 };
 
 function setLight() {
-    if (theme !== 'light') {
-        theme = 'light';
+    if (popup !== 'theme_light') {
         popup = 'theme_light.html'
         optLight.classList.add('enabled');
         optDark.classList.remove('enabled');
@@ -18,8 +17,7 @@ function setLight() {
 };
 
 function setDark() {
-    if (theme !== 'dark') {
-        theme = 'dark';
+    if (popup !== 'theme_dark.html') {
         popup = 'theme_dark.html'
         optLight.classList.remove('enabled');
         optDark.classList.add('enabled');
@@ -30,8 +28,7 @@ function setDark() {
 };
 
 function setAlt() {
-    if (theme !== 'alt') {
-        theme = 'alt';
+    if (popup !== 'theme_alt.html') {
         popup = 'theme_alt.html';
         optLight.classList.remove('enabled');
         optDark.classList.remove('enabled');
@@ -42,8 +39,7 @@ function setAlt() {
 };
 
 function setAlt2() {
-    if (theme !== 'alt2') {
-        theme = 'alt2';
+    if (popup !== 'theme_alt2.html') {
         popup = 'theme_alt2.html';
         optLight.classList.remove('enabled');
         optDark.classList.remove('enabled');
@@ -130,7 +126,7 @@ function setup() {
     });
 
     chrome.storage.sync.get({
-        'theme': '',
+        'popup': '',
         'width': '195',
         'fontsize': 'medium',
         'hidden': []
@@ -138,14 +134,14 @@ function setup() {
         width = start.width;
         slide.value = width;
         disp.innerHTML = width + 'px';
-        theme = start.theme;
-        if (theme === 'light') {
+        popup = start.popup;
+        if (popup === 'theme_light.html') {
             optLight.classList.add('enabled');
         }
-        else if (theme === 'alt') {
+        else if (popup === 'theme_alt.html') {
             optAlt.classList.add('enabled');
         }
-        else if (theme === 'alt2') {
+        else if (popup === 'theme_alt2.html') {
             optAlt2.classList.add('enabled');
         }
         else {
@@ -182,7 +178,6 @@ const slide = document.getElementById('maxwidth');
 const disp = document.getElementById('display');
 const show = document.getElementById('show');
 width = {};
-theme = {};
 popup = {};
 fontsize = {};
 hidden = [];
