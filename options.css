@@ -53,7 +53,7 @@ body {
     top: 20vh;
     left: 0;
     right: 0;
-    padding-bottom: 45px;
+    padding-bottom: 55px;
     margin: auto;
     text-align: left;
 }
@@ -117,6 +117,21 @@ body {
 }
 #version {
     color: hsl(207, 5%, 42%);
+}
+#extPage:after {
+    content: '';
+    display: block;
+    position: initial;
+    margin: auto;
+    margin-top: 3px;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width 1s ease, background-color 1s ease !important
+}
+#extPage:hover:after {
+    width: 200px;
+    background: white;
 }
 h1 {
     margin-top: 0;
