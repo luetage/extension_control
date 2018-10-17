@@ -64,11 +64,8 @@ body {
 
 .column {
     float: left;
-    width: 60%;
-    padding: 0 40px;
-}
-.column:last-of-type {
-    width: 40%;
+    width: 50%;
+    padding: 0 30px;
 }
 .subcolumn {
     width: 100%;
