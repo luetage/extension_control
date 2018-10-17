@@ -126,6 +126,12 @@ h1 {
     font-size: 1.6rem;
     color: hsl(207, 5%, 42%);
 }
+.h2 {
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    color: hsl(228, 3%, 66%);
+}
 .norm {
     color: hsl(228, 3%, 66%);
 }
