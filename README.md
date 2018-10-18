@@ -1,6 +1,6 @@
 # Extension Control
 
-![ext_control](/tile.png)
+![ext_control](/images/tile.png)
 
 `created by luetage and sjudenim for Vivaldi browser`
 
