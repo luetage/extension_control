@@ -211,6 +211,9 @@ button:hover:after {
     width: 100%;
     background: hsl(228, 3%, 66%);
 }
+button:focus {
+    outline: none;
+}
 p {
     margin: 10px 0 10px 0;
     text-align: left;
