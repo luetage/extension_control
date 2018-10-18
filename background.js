@@ -16,9 +16,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == 'update') {
         chrome.storage.sync.get({'os': ''}, function(getIt) {
             var os = getIt.os;
-            /* if (os === '') { */
+            if (os === '') {
                 userAgent();
-            /* } */
+            }
         });
     }
 });
