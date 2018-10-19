@@ -6,7 +6,7 @@ function setTheme() {
 };
 
 function setLight() {
-    if (popup !== 'theme_light') {
+    if (popup !== 'theme_light.html') {
         popup = 'theme_light.html'
         optLight.classList.add('enabled');
         optDark.classList.remove('enabled');
@@ -126,11 +126,13 @@ function setup() {
     });
 
     chrome.storage.sync.get({
-        'popup': '',
+        'popup': 'theme_dark.html',
         'width': '195',
         'fontsize': 'medium',
         'hidden': []
     }, function(start) {
+        popup = start.popup;
+        chrome.browserAction.setPopup({popup});
         width = start.width;
         slide.value = width;
         disp.innerHTML = width + 'px';
