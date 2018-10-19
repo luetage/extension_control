@@ -141,6 +141,9 @@ h1 {
     font-size: 1.6rem;
     color: hsl(207,5%,42%);
 }
+#hint {
+    visibility: hidden;
+}
 .h2 {
     font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;

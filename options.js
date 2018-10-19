@@ -86,13 +86,15 @@ function setLarge() {
 };
 
 function empty() {
+    document.getElementById('hint').style.visibility = 'hidden';
     var empty = document.createElement('p');
     empty.classList.add('contrast');
-    empty.innerHTML = 'empty';
+    empty.innerHTML = 'got nothing to hide';
     show.appendChild(empty);
 }
 
 function showEXT() {
+    document.getElementById('hint').style.visibility = 'visible';
     for (i=0; i<hidden.length; i++) {
         extID = hidden[i];
         chrome.management.get(extID, function(text) {
