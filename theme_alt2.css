@@ -1,24 +1,20 @@
 :root {
-    --bg: hsl(0,0%,10%);
-    --fg: hsl(207,5%,42%);
-    --fgShadow: hsl(207,5%,32%);
-    --headerBg: hsl(240,3%,13%);
-    --headerHi: hsl(228,57%,73%);
-    --headerHiShadow: hsl(228,57%,58%);
+    --bg: hsl(0,0%,8%);
+    --fg: hsl(207,5%,38%);
+    --fgShadow: hsl(228,3%,28%);
+    --headerBg: hsl(0,0%,6%);
+    --headerHi: hsl(357,55%,50%);
     --headerFg: hsl(228,3%,66%);
-    --headerFgShadow: hsl(228,3%,51%);
-    --extBgHi: hsl(240,2%,19%);
+    --extBgHi: hsl(0, 0%, 5%);
     --extFgHi: hsl(228,3%,66%);
     --extFgHiShadow: hsl(228,3%,46%);
-    --extEn: hsl(228,57%,73%);
-    --extEnShadow: hsl(228,57%,53%);
-    --extEnHi: hsl(228,57%,73%);
-    --extEnHiShadow: hsl(228,57%,53%);
-    --menuBg: hsl(240,2%,19%);
+    --extEn: hsl(357, 55%, 52%);
+    --extEnHi: hsl(357,55%,58%);
+    --menuBg: hsl(0,0%,3%);
     --menuFgAct: hsl(210,2%,81%);
     --menuFgActHi: hsl(210,2%,95%);
-    --menuBgHi: hsl(229,59.8%,59%);
-    --menuBgHi2: hsl(349,60%,59%);
+    --menuBgHi: hsl(0,0%,15%);
+    --menuBgHi2: hsl(357,55%,52%);
     --desc: hsl(228,3%,66%);
     --descShadow: hsl(228,3%,56%);
 }
@@ -35,7 +31,6 @@
 body {
     display: block;
     font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
-    font-weight: 500;
     letter-spacing: .5px;
     min-width: 170px;
     min-height: 200px;
@@ -52,8 +47,9 @@ body {
 #header {
     position: fixed;
     top: 0;
-    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
+    letter-spacing: .8px;
     text-align: left;
     padding: 16px 15px 11px;
     width: 100%;
@@ -102,6 +98,7 @@ body {
     color: var(--extFgHi);
 }
 .extension.enabled, .extension.enabled:hover {
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     color: var(--extEn);
 }
 .extension.enabled:hover {
@@ -118,7 +115,6 @@ body {
 }
 .info, .hide, .options, .uninstall {
     font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
-    font-weight: 600;
     width: 48%;
     text-align: center;
     padding: 8px 0;
