@@ -1,7 +1,7 @@
 :root {
     --bg: hsl(0,0%,8%);
     --fg: hsl(207,5%,38%);
-    --fgShadow: hsl(228,3%,38%);
+    --fgShadow: hsl(228,3%,28%);
     --headerBg: hsl(0,0%,6%);
     --headerHi: hsl(357,55%,50%);
     --headerHiShadow: hsl(357,55%,10%);
