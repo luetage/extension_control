@@ -161,7 +161,7 @@ h1 {
     color: hsl(207, 5%, 42%);
     cursor: pointer;
 }
-#light, #dark, #alt2, #medium, #large {
+#light, #alt, #alt2, #medium, #large {
     margin-left: 20px;
 }
 #light:hover, #alt:hover, #dark:hover, #alt2:hover, #small:hover, #medium:hover, #large:hover {
