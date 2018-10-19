@@ -3,7 +3,7 @@ browser = {};
 popup = {};
 
 chrome.runtime.onStartup.addListener(function() {
-    chrome.storage.sync.get({'popup': ''}, function(startup) {
+    chrome.storage.sync.get({'popup': 'theme_dark.html'}, function(startup) {
         popup = startup.popup;
         chrome.browserAction.setPopup({popup});
     });
@@ -51,24 +51,19 @@ function userAgent() {
     }
     if (agent.includes('Vivaldi') === true) {
         browser = 'viv';
-        popup = 'theme_dark.html';
     }
     else if (agent.includes('OPR') === true) {
         browser = 'opr';
-        popup = 'theme_dark.html';
     }
     else {
         browser = 'chr';
-        popup = 'theme_light.html';
     }
     chrome.storage.sync.set({
         'os': os,
         'browser': browser,
-        'popup': popup
     }, function() {
-        chrome.browserAction.setPopup({popup});
         console.log(agent);
-        console.log(os + ' ' + browser + ' ' + popup);
+        console.log(os + ' ' + browser);
         chrome.runtime.openOptionsPage();
     });
 };

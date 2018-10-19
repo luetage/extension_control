@@ -19,8 +19,8 @@
     --menuFgActHi: hsl(210,2%,95%);
     --menuBgHi: hsl(229,59.8%,59%);
     --menuBgHi2: hsl(349,60%,59%);
-    --desc: hsl(349,60%,59%);
-    --descShadow: hsl(349,60%,39%);
+    --desc: hsl(228,3%,66%);
+    --descShadow: hsl(228,3%,51%);
 }
 
 @font-face {
