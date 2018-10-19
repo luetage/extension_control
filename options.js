@@ -131,6 +131,8 @@ function setup() {
         'fontsize': 'medium',
         'hidden': []
     }, function(start) {
+        popup = start.popup;
+        chrome.browserAction.setPopup({popup});
         width = start.width;
         slide.value = width;
         disp.innerHTML = width + 'px';
