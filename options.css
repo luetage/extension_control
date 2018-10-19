@@ -130,7 +130,7 @@ body {
     transition: width 1s ease, background-color 1s ease !important
 }
 #extPage:hover:after {
-    width: 185px;
+    width: 195px;
     background: hsl(228, 3%, 66%);
 }
 h1 {
