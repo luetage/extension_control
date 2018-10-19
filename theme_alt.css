@@ -1,16 +1,16 @@
 :root {
     --bg: hsl(0,0%,99%);
     --fg: hsl(207,5%,58%);
-    --fgShadow: hsl(207,5%,69%);
+    --fgShadow: hsl(207,5%,62%);
     --headerBg: hsl(240,3%,94%);
     --headerHi: hsl(0,0%,28%);
-    --headerHiShadow: hsl(0,0%,38%);
-    --headerFg: hsl(228,3%,69%);
-    --headerFgShadow: hsl(228,3%,75%);
+    --headerHiShadow: hsl(0,0%,30%);
+    --headerFg: hsl(228,3%,60%);
+    --headerFgShadow: hsl(228,3%,85%);
     --extBgHi: hsl(240,5%,78%);
     --extFgHi: hsl(360,100%,100%);
     --extEn: hsl(0,0%,28%);
-    --extEnShadow: hsl(0,0%,40%);
+    --extEnShadow: hsl(0,0%,32%);
     --extEnHi: hsl(0,0%,22%);
     --extEnHiShadow: hsl(0,0%,35%);
     --menuBg: hsl(240,5%,78%);
@@ -19,7 +19,7 @@
     --menuBgHi: hsl(240,5%,69%);
     --menuBgHi2: hsl(349,97%,76%);
     --desc: hsl(0,0%,28%);
-    --descShadow: hsl(0,0%,38%);
+    --descShadow: hsl(0,0%,30%);
 }
 
 @font-face {
@@ -51,7 +51,7 @@ body {
 #header {
     position: fixed;
     top: 0;
-    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Raleway-Medium", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     text-align: left;
     padding: 16px 15px 11px;
