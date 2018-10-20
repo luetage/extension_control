@@ -12,6 +12,7 @@ function setLight() {
         optDark.classList.remove('enabled');
         optAlt.classList.remove('enabled');
         optAlt2.classList.remove('enabled');
+        document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
         setTheme();
     }
 };
@@ -23,6 +24,7 @@ function setDark() {
         optDark.classList.add('enabled');
         optAlt.classList.remove('enabled');
         optAlt2.classList.remove('enabled');
+        document.body.style.setProperty('--accent', 'hsl(228,57%,73%)');
         setTheme();
     }
 };
@@ -34,6 +36,7 @@ function setAlt() {
         optDark.classList.remove('enabled');
         optAlt.classList.add('enabled');
         optAlt2.classList.remove('enabled');
+        document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
         setTheme();
     }
 };
@@ -45,6 +48,7 @@ function setAlt2() {
         optDark.classList.remove('enabled');
         optAlt.classList.remove('enabled');
         optAlt2.classList.add('enabled');
+        document.body.style.setProperty('--accent', 'hsl(357, 55%, 52%)');
         setTheme();
     }
 };
@@ -141,15 +145,19 @@ function setup() {
         popup = start.popup;
         if (popup === 'theme_light.html') {
             optLight.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
         }
         else if (popup === 'theme_alt.html') {
             optAlt.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
         }
         else if (popup === 'theme_alt2.html') {
             optAlt2.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(357, 55%, 52%)');
         }
         else {
             optDark.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(228,57%,73%)');
         }
         fontsize = start.fontsize;
         if (fontsize === 'small') {
