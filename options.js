@@ -93,7 +93,7 @@ function empty() {
     document.getElementById('hint').style.visibility = 'hidden';
     var empty = document.createElement('p');
     empty.classList.add('contrast');
-    empty.innerHTML = 'got nothing to hide';
+    empty.innerHTML = 'nothing to hide';
     show.appendChild(empty);
 }
 
