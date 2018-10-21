@@ -99,7 +99,6 @@ body {
     color: var(--extFgHi);
 }
 .extension.enabled, .extension.enabled:hover {
-    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     color: var(--extEn);
 }
 .extension.enabled:hover {
