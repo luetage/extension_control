@@ -181,6 +181,7 @@ body {
     text-decoration: none;
 }
 .desc {
+    font-family: "Raleway-SemiBold", "Helvetica Neue", "Helvetica", sans-serif;
     color: var(--desc);
 }
 #copy {
