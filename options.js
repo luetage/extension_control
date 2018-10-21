@@ -10,9 +10,6 @@ function setLight() {
         popup = 'theme_light.html'
         optLight.classList.add('enabled');
         optDark.classList.remove('enabled');
-        optAlt.classList.remove('enabled');
-        optAlt2.classList.remove('enabled');
-        document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
         setTheme();
     }
 };
@@ -22,33 +19,6 @@ function setDark() {
         popup = 'theme_dark.html'
         optLight.classList.remove('enabled');
         optDark.classList.add('enabled');
-        optAlt.classList.remove('enabled');
-        optAlt2.classList.remove('enabled');
-        document.body.style.setProperty('--accent', 'hsl(228,57%,73%)');
-        setTheme();
-    }
-};
-
-function setAlt() {
-    if (popup !== 'theme_alt.html') {
-        popup = 'theme_alt.html';
-        optLight.classList.remove('enabled');
-        optDark.classList.remove('enabled');
-        optAlt.classList.add('enabled');
-        optAlt2.classList.remove('enabled');
-        document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
-        setTheme();
-    }
-};
-
-function setAlt2() {
-    if (popup !== 'theme_alt2.html') {
-        popup = 'theme_alt2.html';
-        optLight.classList.remove('enabled');
-        optDark.classList.remove('enabled');
-        optAlt.classList.remove('enabled');
-        optAlt2.classList.add('enabled');
-        document.body.style.setProperty('--accent', 'hsl(357, 55%, 52%)');
         setTheme();
     }
 };
@@ -145,19 +115,9 @@ function setup() {
         popup = start.popup;
         if (popup === 'theme_light.html') {
             optLight.classList.add('enabled');
-            document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
-        }
-        else if (popup === 'theme_alt.html') {
-            optAlt.classList.add('enabled');
-            document.body.style.setProperty('--accent', 'hsl(349,97%,76%)');
-        }
-        else if (popup === 'theme_alt2.html') {
-            optAlt2.classList.add('enabled');
-            document.body.style.setProperty('--accent', 'hsl(357, 55%, 52%)');
         }
         else {
             optDark.classList.add('enabled');
-            document.body.style.setProperty('--accent', 'hsl(228,57%,73%)');
         }
         fontsize = start.fontsize;
         if (fontsize === 'small') {
@@ -181,8 +141,6 @@ function setup() {
 
 const optLight = document.getElementById('light');
 const optDark = document.getElementById('dark');
-const optAlt = document.getElementById('alt');
-const optAlt2 = document.getElementById('alt2');
 const optSmall = document.getElementById('small');
 const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
@@ -205,8 +163,6 @@ slide.onchange = function() {
 };
 optLight.addEventListener('click', setLight);
 optDark.addEventListener('click', setDark);
-optAlt.addEventListener('click', setAlt);
-optAlt2.addEventListener('click', setAlt2);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);

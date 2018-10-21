@@ -1,10 +1,10 @@
 :root {
     --bg: hsl(0,0%,97%);
-    --fg: hsl(240,5%,69%);
+    --fg: hsl(240,5%,60%);
     --fgShadow: hsl(207,5%,76%);
     --headerBg: hsl(240,3%,100%);
     --headerHi: hsl(0,0%,32%);
-    --headerFg: hsl(240,5%,69%);
+    --headerFg: hsl(240,5%,60%);
     --extBgHi: hsl(240,5%,78%);
     --extFgHi: hsl(360,100%,100%);
     --extEn: hsl(0,0%,32%);
@@ -12,7 +12,8 @@
     --menuBg: hsl(240,5%,78%);
     --menuFgAct: hsl(360,100%,100%);
     --menuFgActHi: hsl(0, 0%, 94%);
-    --menuBgHi: hsl(240,5%,69%);
+    --menuFgDis: hsl(240,5%,60%);
+    --menuBgHi: hsl(240,5%,60%);
     --menuBgHi2: hsl(349,97%,76%);
     --desc: hsl(0,0%,32%);
     --descShadow: hsl(0,0%,34%);
