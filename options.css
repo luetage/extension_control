@@ -75,7 +75,7 @@ body {
 }
 .sub-column {
     width: 100%;
-    max-height: 48vh;
+    max-height: 33vh;
     overflow: hidden;
     text-overflow: ellipsis;
 }
