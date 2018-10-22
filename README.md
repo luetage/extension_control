@@ -13,6 +13,8 @@ Extension Control is a lightweight extension manager designed for those who want
 * enable/disable extensions with a single click
 * execute an uninstall
 * access extension options
+* hide extensions from menu
+* extension info
 * switch between dark and light theme
 * set maximum width of the popup
 * set the font size
