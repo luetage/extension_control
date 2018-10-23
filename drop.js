@@ -30,7 +30,12 @@ function gutter() {
 
 function font() {
     var styleWin = document.createElement('style');
-    styleWin.innerHTML = 'body {text-shadow: var(--fgShadow) 0 0 1px;} .desc {text-shadow: var(--descShadow) 0 0 1px;}';
+    if (popup === theme_dark.html) {
+        styleWin.innerHTML = 'body {text-shadow: var(--fgShadow) 0 0 1px;} .desc {text-shadow: var(--descShadow) 0 0 1px;}';
+    }
+    else {
+        styleWin.innerHTML = '';
+    }
     document.body.appendChild(styleWin);
 };
 
@@ -51,10 +56,12 @@ function options() {
 
 function setup() {
     chrome.storage.sync.get({
+        'popup': 'theme_dark.html',
         'width': '195',
         'fontsize': 'medium',
         'os': ''
     }, function(start) {
+        popup = start.popup;
         const width = start.width;
         document.body.style.maxWidth = width + 'px';
         const fontsize = start.fontsize;
@@ -236,6 +243,7 @@ function run() {
 };
 
 hidden = [];
+popup = {};
 setup();
 load();
 document.getElementById('switcher').addEventListener('mouseleave', rmMenu);
