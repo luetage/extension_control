@@ -1,35 +1,38 @@
 {
-   "author": [ "luetage, sjudenim" ],
-   "background": {
-      "persistent": false,
-      "scripts": [ "background.js" ]
-   },
-   "browser_action": {
-      "default_icon": {
-         "16": "icons/icn16.png",
-         "24": "icons/icn24.png",
-         "38": "icons/icn38.png"
-      },
-      "default_popup": "theme_dark.html",
-      "default_title": "Extension Control"
-   },
-   "description": "Elementary extension manager. Compact design, no superfluous features.",
-   "homepage_url": "https://github.com/luetage/extension_control",
-   "icons": {
-      "128": "icons/icn128.png",
-      "16": "icons/icn16.png",
-      "48": "icons/icn48.png"
-   },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqqNJVv2T3dPv+kFsIGJ2gPGduvj9BQVKaaFcDIsH7+HPaWU2ORsuhN79iQoKxx3IJSeLvKE2B6bYcSQ4z8PI1eCVJCKgjKPWhqEmKWb9Iw/e6B8Rbf3xW++smpgHkk43vEXaF+DrKheaUpBm6fp2vJ+spsFLwXi/A+awFV+in7TFYI1l8zXIjaRfcfWCXxgA7NxLX9mS12kx/yFmmLkj3oDAWDrEPp3Hj+CIAZ2V+XfEFMiiYuB3UPBYIlnajpoAx3z/RM6+2O5pg/cEuwZ99bzDN6mUxbHh4E5hH3tHzmsGo7bk2yRdjhX1M9qmWTewA/TQ8pklYXbNyU1LWbYOxQIDAQAB",
-   "manifest_version": 2,
-   "name": "Extension Control",
-   "offline_enabled": true,
-   "options_ui": {
-      "open_in_tab": true,
-      "page": "options.html"
-   },
-   "permissions": [ "management", "storage" ],
-   "short_name": "Ext_Control",
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.66"
+
+    "manifest_version": 2,
+    "name": "Extension Control",
+    "short_name": "Ext_Control",
+    "version": "0.66",
+    "author": ["luetage, sjudenim"],
+    "description": "Elementary extension manager. Compact design, no superfluous features.",
+    "homepage_url": "https://github.com/luetage/extension_control",
+    "permissions": [
+        "management",
+        "storage"
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "offline_enabled": true,
+    "icons": {
+        "16": "icons/icn16.png",
+        "48": "icons/icn48.png",
+        "128": "icons/icn128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "icons/icn16.png",
+            "24": "icons/icn24.png",
+            "38": "icons/icn38.png"
+        },
+          "default_popup": "theme_dark.html",
+          "default_title": "Extension Control"
+    },
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": false
+    }
+
 }
