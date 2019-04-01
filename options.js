@@ -65,7 +65,7 @@ function empty() {
     empty.classList.add('contrast');
     empty.innerHTML = 'nothing to hide';
     show.appendChild(empty);
-}
+};
 
 function showEXT() {
     document.getElementById('hint').style.visibility = 'visible';
