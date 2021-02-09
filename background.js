@@ -7,18 +7,9 @@ chrome.runtime.onStartup.addListener(function() {
 });
 
 chrome.runtime.onInstalled.addListener(function(details) {
-    if (details.reason == 'install') {
+    if (details.reason == 'install' || details.reason == 'update') {
         theme();
         userAgent();
-    }
-    if (details.reason == 'update') {
-        theme();
-        chrome.storage.sync.get({'os': ''}, function(check) {
-            os = check.os;
-            if (os === '') {
-                userAgent();
-            }
-        });
     }
 });
 

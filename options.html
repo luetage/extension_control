@@ -4,13 +4,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Extension Control</title>
-    <link rel="stylesheet" href="options.css" />
+    <link rel="stylesheet" href="style/options.css" />
     <link rel="shortcut icon" type="image/png" href="icons/icn16.png">
 </head>
 
 <body>
     <div id="header">
-        <span id="extPage" title="Open extensions page"><span class="high">extension</span><span class="norm">control </span><span id="version"></span></span>
+        <span id="extPage" title="Open extensions page"><span class="high">extension</span><span class="norm">control</span>
+</span>
     </div>
     <div id="content">
         <div class="row">
@@ -21,7 +22,7 @@
                         <span>Set the maximum width</span>
                     </div>
                     <div class="right">
-                        <input id="maxwidth" type="range" name="rangeInput" min="170" max="250" step="5"><span id="display"></span>
+                        <input id="maxwidth" type="range" name="rangeInput" min="180" max="300" step="5"><span id="display"></span>
                     </div>
                 </div>
                 <div class="float">
@@ -32,17 +33,11 @@
                         <span id="small">small</span><span id="medium">medium</span><span id="large">large</span>
                     </div>
                 </div>
-                <div class="float">
-                    <div class="left">
-                        <span>Select a theme</span>
-                    </div>
-                    <div class="right">
-                    <span id="dark">dark</span><span id="light">light</span>
-                    </div>
-                    <br><br><br><h1>Hidden Extensions <span id="hint" class="h2"> click to unhide</span></h1>
-                    <div class="sub-column">
-                        <div id="show" class="left"></div>
-                    </div>
+                <br><h1>Theme Selection</h1>
+                <span id="light">light</span><span id="alt">lighter</span><span id="dark">dark</span><span id="alt2">darker</span>                 
+                <br><br><br><h1>Hidden Extensions<span id="hint"></span></h1>
+                <div class="sub-column">
+                    <div id="show" title="Select to unhide" class="left"></div>
                 </div>
             </div>
             <div class="column-right">
@@ -56,15 +51,17 @@
                     <p><span class="contrast">Uninstall</span> extension from the browser</p>
                     <p><span class="contrast">[]</span> not from chrome web store</p>
                     <p><span class="contrast">$</span> an unpacked extension (development)</p>
-                    <br><h1>Links</h1>
-                    <form method="get" action="https://chrome.google.com/webstore/detail/extension-control/himccccaelhgphommckogopgpddngimf?hl=en-US" target="_blank" rel="noreferrer noopener"><button type="submit">chrome web store</button></form> | <form method="get" action="https://github.com/luetage/extension_control" target="_blank" rel="noreferrer noopener"><button type="submit">github</button></form>
-
+                    <br>
+                    <br><h1>Resources</h1>
+                    <form method="get" action="https://chrome.google.com/webstore/detail/extension-control/himccccaelhgphommckogopgpddngimf?hl=en-US"
+                        target="_blank" rel="noreferrer noopener"><button type="submit">chrome web store</button></form>
+                        | <form method="get" action="https://forum.vivaldi.net/topic/29013/extension-control" target="_blank" rel="noreferrer noopener"><button
+                            id="link" type="submit">forum</button></form>
+                        | <form method="get" action="https://github.com/luetage/extension_control" target="_blank" rel="noreferrer noopener"><button
+                            type="submit">github</button></form>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="footer">
-        <span>Originally made for the <form method="get" action="https://vivaldi.com/" target="_blank" rel="noreferrer noopener"><button type="submit" class="foot">Vivaldi</button></form> web browser</span>
     </div>
     <script src="options.js"></script>
 </body>

@@ -10,6 +10,15 @@ function setLight() {
         popup = 'theme_light.html'
         optLight.classList.add('enabled');
         optDark.classList.remove('enabled');
+        optAlt.classList.remove('enabled');
+        optAlt2.classList.remove('enabled');
+        document.body.style.setProperty('--accent', 'hsl(349, 83%, 61%)');
+        document.body.style.setProperty('--bg', 'hsl(0, 0%, 100%)');
+        document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
+        document.body.style.setProperty('--headerFg', 'hsl(349, 83%, 61%)');
+        document.body.style.setProperty('--headerAccent', 'hsl(0,0%,28%)');
+        document.body.style.setProperty('--fg', 'hsl(240, 5%, 69%)');
+        document.body.style.setProperty('--secondFg', 'hsl(0,0%,28%)');
         setTheme();
     }
 };
@@ -19,6 +28,51 @@ function setDark() {
         popup = 'theme_dark.html'
         optLight.classList.remove('enabled');
         optDark.classList.add('enabled');
+        optAlt.classList.remove('enabled');
+        optAlt2.classList.remove('enabled');
+        document.body.style.setProperty('--accent', 'hsl(228,57%,73%)');
+        document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
+        document.body.style.setProperty('--headerBg', 'hsl(240,3%,12%)');
+        document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
+        document.body.style.setProperty('--headerAccent', 'hsl(228,57%,73%)');
+        document.body.style.setProperty('--fg', 'hsl(228,3%,66%)');
+        document.body.style.setProperty('--secondFg', 'hsl(208,8%,48%)');
+        setTheme();
+    }
+};
+
+function setAlt() {
+    if (popup !== 'theme_alt.html') {
+        popup = 'theme_alt.html';
+        optLight.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optAlt.classList.add('enabled');
+        optAlt2.classList.remove('enabled');
+        document.body.style.setProperty('--accent', 'hsl(228, 57%, 73%)');
+        document.body.style.setProperty('--bg', 'hsl(0, 0%, 100%)');
+        document.body.style.setProperty('--headerBg', 'hsl(0, 0%, 99%)');
+        document.body.style.setProperty('--headerFg', 'hsl(228, 57%, 73%)');
+        document.body.style.setProperty('--headerAccent', 'hsl(0,0%,28%)');
+        document.body.style.setProperty('--fg', 'hsl(240, 5%, 69%)');
+        document.body.style.setProperty('--secondFg', 'hsl(0, 0%, 32%)');
+        setTheme();
+    }
+};
+
+function setAlt2() {
+    if (popup !== 'theme_alt2.html') {
+        popup = 'theme_alt2.html';
+        optLight.classList.remove('enabled');
+        optDark.classList.remove('enabled');
+        optAlt.classList.remove('enabled');
+        optAlt2.classList.add('enabled');
+        document.body.style.setProperty('--accent', 'hsl(197, 67%, 48%)');
+        document.body.style.setProperty('--bg', 'hsl(220, 5%, 8%)');
+        document.body.style.setProperty('--headerBg', 'hsl(220, 5%, 7%)');
+        document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
+        document.body.style.setProperty('--headerAccent', 'hsl(197, 67%, 48%)');
+        document.body.style.setProperty('--fg', 'hsl(228,3%,66%)');
+        document.body.style.setProperty('--secondFg', 'hsl(208,8%,48%)');
         setTheme();
     }
 };
@@ -95,12 +149,6 @@ function showEXT() {
 };
 
 function setup() {
-    chrome.management.getSelf(function(info) {
-        const ver = info.version;
-        const version = document.getElementById('version');
-        version.innerHTML = ' ' + ver;
-    });
-
     chrome.storage.sync.get({
         'popup': 'theme_dark.html',
         'width': '195',
@@ -115,9 +163,43 @@ function setup() {
         popup = start.popup;
         if (popup === 'theme_light.html') {
             optLight.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(349, 83%, 61%)');
+            document.body.style.setProperty('--bg', 'hsl(0, 0%, 100%)');
+            document.body.style.setProperty('--headerBg', 'hsl(240,3%,96%)');
+            document.body.style.setProperty('--headerFg', 'hsl(349, 83%, 61%)');
+            document.body.style.setProperty('--headerAccent', 'hsl(0,0%,28%)');
+            document.body.style.setProperty('--fg', 'hsl(240, 5%, 69%)');
+            document.body.style.setProperty('--secondFg', 'hsl(0,0%,28%)');
+        }
+        else if (popup === 'theme_alt.html') {
+            optAlt.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(228, 57%, 73%)');
+            document.body.style.setProperty('--bg', 'hsl(0, 0%, 100%)');
+            document.body.style.setProperty('--headerBg', 'hsl(0, 0%, 99%)');
+            document.body.style.setProperty('--headerFg', 'hsl(228, 57%, 73%)');
+            document.body.style.setProperty('--headerAccent', 'hsl(0,0%,28%)');
+            document.body.style.setProperty('--fg', 'hsl(240, 5%, 69%)');
+            document.body.style.setProperty('--secondFg', 'hsl(0, 0%, 32%)');
+        }
+        else if (popup === 'theme_alt2.html') {
+            optAlt2.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(197, 67%, 48%)');
+            document.body.style.setProperty('--bg', 'hsl(220, 5%, 8%)');
+            document.body.style.setProperty('--headerBg', 'hsl(220, 5%, 7%)');
+            document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
+            document.body.style.setProperty('--headerAccent', 'hsl(197, 67%, 48%)');
+            document.body.style.setProperty('--fg', 'hsl(228,3%,66%)');
+            document.body.style.setProperty('--secondFg', 'hsl(208,8%,48%)');
         }
         else {
             optDark.classList.add('enabled');
+            document.body.style.setProperty('--accent', 'hsl(228,57%,73%)');
+            document.body.style.setProperty('--bg', 'hsl(0,0%,10%)');
+            document.body.style.setProperty('--headerBg', 'hsl(240,3%,12%)');
+            document.body.style.setProperty('--headerFg', 'hsl(228,3%,66%)');
+            document.body.style.setProperty('--headerAccent', 'hsl(228,57%,73%)');
+            document.body.style.setProperty('--fg', 'hsl(228,3%,66%)');
+            document.body.style.setProperty('--secondFg', 'hsl(208,8%,48%)');
         }
         fontsize = start.fontsize;
         if (fontsize === 'small') {
@@ -141,6 +223,8 @@ function setup() {
 
 const optLight = document.getElementById('light');
 const optDark = document.getElementById('dark');
+const optAlt = document.getElementById('alt');
+const optAlt2 = document.getElementById('alt2');
 const optSmall = document.getElementById('small');
 const optMedium = document.getElementById('medium');
 const optLarge = document.getElementById('large');
@@ -163,6 +247,8 @@ slide.onchange = function() {
 };
 optLight.addEventListener('click', setLight);
 optDark.addEventListener('click', setDark);
+optAlt.addEventListener('click', setAlt);
+optAlt2.addEventListener('click', setAlt2);
 optSmall.addEventListener('click', setSmall);
 optMedium.addEventListener('click', setMedium);
 optLarge.addEventListener('click', setLarge);

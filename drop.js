@@ -1,22 +1,22 @@
 function small() {
     document.body.style.setProperty('--top', '48px');
-    document.body.style.setProperty('--height', '520px');
+    document.body.style.setProperty('--height', '505px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 14px} body {font-size: 12px} .options, .uninstall, .info, .hide {font-size: 11px}';
     document.body.appendChild(fontsize);
 };
 
 function medium() {
-    document.body.style.setProperty('--top', '50px');
-    document.body.style.setProperty('--height','513px');
+    document.body.style.setProperty('--top', '48px');
+    document.body.style.setProperty('--height','510px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 15px} body {font-size: 13px} .options, .uninstall, .info, .hide {font-size: 12px}';
     document.body.appendChild(fontsize);
 };
 
 function large() {
-    document.body.style.setProperty('--top', '51px');
-    document.body.style.setProperty('--height', '532px');
+    document.body.style.setProperty('--top', '48px');
+    document.body.style.setProperty('--height', '515px');
     var fontsize = document.createElement('style');
     fontsize.innerHTML = '#header {font-size: 16px} body {font-size: 14px} .options, .uninstall, .info, .hide {font-size: 13px}';
     document.body.appendChild(fontsize);
@@ -24,13 +24,13 @@ function large() {
 
 function gutter() {
     var styleGut = document.createElement('style');
-    styleGut.innerHTML = '#header {padding: 16px 20px 11px;} .extension, #menu {padding: 5px 15px 5px 20px;} #txtdiv {padding: 0 15px 0 20px} .extension.dev div::before {content:"$"} .extension.out div::before {content:"[]"}';
+    styleGut.innerHTML = '.extension, #menu {padding: 5px 15px 5px 20px;} #txtdiv {padding: 0 15px 0 20px} .extension.dev div::before {content:"$"} .extension.out div::before {content:"[]"}';
     document.body.appendChild(styleGut);
 };
 
 function font() {
     var styleWin = document.createElement('style');
-    styleWin.innerHTML = 'body {text-shadow: var(--fgShadow) 0 0 1px;} .desc {text-shadow: var(--descShadow) 0 0 1px;}';
+    styleWin.innerHTML = 'body {text-shadow: var(--fg-shadow) 0 0 1px;} .desc {text-shadow: var(--desc-shadow) 0 0 1px;}';
     document.body.appendChild(styleWin);
 };
 
@@ -51,7 +51,7 @@ function options() {
 
 function setup() {
     chrome.storage.sync.get({
-        'width': '195',
+        'width': '200',
         'fontsize': 'medium',
         'os': ''
     }, function(start) {
